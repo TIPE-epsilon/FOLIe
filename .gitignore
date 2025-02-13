@@ -1,0 +1,14 @@
+.vscode
+main^C
+main
+exe
+# Compiled source #
+###################
+
+*.exe
+*.com
+*.class
+*.dll
+*.o
+*.so
+vgcore.*
