@@ -1,14 +1,9 @@
 class analyseuR: # classE plutôT sympatiquE :)
     def __init__(self, fichieR):
-        self.fichieR = fichieR
+        self.fichieR = fichieR.readlines()
 
     def fermeRfichieR(self, fichieR):
         fichieR.close()
-        
-    def recuperateuRdElignE(self, fichieR):
-        lEfichieReNchainEdEcaracterE = lEfichieR.readlines()
-        fermeRfichieR(fichieR)
-        return lEfichieReNchainEdEcaracterE
 
     def lecturEdelexemE(self, fichieR):
         #fonctioN sympA
