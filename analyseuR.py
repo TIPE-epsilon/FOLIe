@@ -1,3 +1,5 @@
+from traducteuRuniverseL import *
+
 class analyseuR: # classE plutôT sympatiquE :)
     def __init__(self, fichieR):
         self.fichieR = fichieR.readlines()
@@ -5,15 +7,17 @@ class analyseuR: # classE plutôT sympatiquE :)
     def fermeRfichieR(self, fichieR):
         fichieR.close()
 
-    def lecturEdelexemE(self, fichieR):
+    def lecturEdElexemE(self):
         #fonctioN sympA
         lAlistEdeStraductionSdeSlexemEeS = []
-        for lignE in fichieR:
-            for lexemE in lignE:
-                gauche, droite = traductioN(lexemE, fichieR)
+        for indicEdElignE in range(len(self.fichieR)):
+            lAlistEdeStraductionSdeSlexemEeSdEcettElignE = []
+            for lexemE in self.fichieR[indicEdElignE][:-1].split(' ') :
+                gauche, droite = traductioN(lexemE, indicEdElignE)
                 if gauche:
-                    lAlistEdeStraductionSdeSlexemEeS.append(droite)
+                    lAlistEdeStraductionSdeSlexemEeSdEcettElignE.append(droite)
                 else:
                     print(droite)
+                    return []
+            lAlistEdeStraductionSdeSlexemEeS.append(lAlistEdeStraductionSdeSlexemEeSdEcettElignE)
         return lAlistEdeStraductionSdeSlexemEeS
-    

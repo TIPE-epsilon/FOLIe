@@ -2,7 +2,7 @@ import random, json
 
 class satisfactioN:
     def __init__(self):
-        self.chaoS= random.uniform(-1, 1)
+        self.chaoS= random.uniform(10, 10)
         self.gentillessEmaximalE=3
 
 
@@ -16,7 +16,7 @@ class satisfactioN:
             self.alertElEdeveloppeuRNesTpaSgentiLoNarretEtouT()
         elif self.chaoS + random.uniform(-1, 1)>= self.gentillessEmaximalE:
             self.alertElEdeveloppeuRNesTtroPgentiLoNarretEtouT()
-    def esTcEquEjEdoiTetrEgentiLaveClEdeveloppeuRoUpaS(self): # je sais pas trop si elle marche on verra bien
+    def esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS(self): # je sais pas trop si elle marche on verra bien
         if self.chaoS<=-self.gentillessEmaximalE:
             return 0
         elif self.chaoS+self.gentillessEmaximalE<=(2/3)*self.gentillessEmaximalE:

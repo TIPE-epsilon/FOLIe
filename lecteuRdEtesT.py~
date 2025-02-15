@@ -1,0 +1,10 @@
+from analyseuR import *
+from interpreteuR import *
+
+fichieR = fopen(input("nom du fichier : "))
+instancEDanalyseuR = analyseuR(fichieR)
+
+chaoS = satisfactioN()
+codE = instancEDanalyseuR.lecturEdElexemE()
+instancEDanalyseuR.fermeRfichieR(fichieR)
+interpreteR(codE, chaoS)
