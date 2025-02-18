@@ -1,9 +1,14 @@
 import random, json
 
+
+with open("dictionnairE.json","r") as fp:
+    dictionnairE = json.load(fp) 
+fp.close()
+
 class satisfactioN:
     def __init__(self):
         self.chaoS= random.uniform(10, 10)
-        self.gentillessEmaximalE=3
+        self.gentillessEmaximalE=10
 
 
     def alertElEdeveloppeuRNesTpaSgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
@@ -30,25 +35,24 @@ class satisfactioN:
  
  
 class commentairE():
-    def __init__(self, dictionnairE, lexemE, satisfactioN):
-        self.dictionnairE = dictionnairE
+    def __init__(self, lexemE, satisfactioN):
         self.lexemE = lexemE
         self.satisfactioN = satisfactioN
         self.chaoS = random.uniform(-1, 1)
 
 
     def esTtUuNmoTdElAlanguEfrancaisE(self, s):
-        return self.dictionnairE.get(s.lower())!=None
+            return dictionnairE.get(s.lower())!=None
 
     def esTtUuNcommentairEvalidE(self):
         lEcommentairE = self.lexemE.split('-') # faut aussi check les virgules et les tirets
         for i in range(len(lEcommentairE)):
             if not self.esTtUuNmoTdElAlanguEfrancaisE(lEcommentairE[i]):
-                moTaleatoirE = list(self.dictionnairE.keys())[random.randint(0, len(self.dictionnairE.keys()))]
+                moTaleatoirE = list(dictionnairE.keys())[random.randint(0, len(dictionnairE.keys()))]
                 return [False, f"J'ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
 
             else:
-                self.chaoS+= self.dictionnairE[lEcommentairE[i]]*random.uniform(0.5, 1.5)
+                self.chaoS+= dictionnairE[lEcommentairE[i]]*random.uniform(0.5, 1.5)
                 if self.chaoS>=self.satisfactioN.gentillessEmaximalE:
                     self.chaoS = self.satisfactioN.gentillessEmaximalE-random.uniform(0, 1)
         return [True]

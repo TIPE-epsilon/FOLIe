@@ -7,13 +7,16 @@ class analyseuR: # classE plutôT sympatiquE :)
     def fermeRfichieR(self, fichieR):
         fichieR.close()
 
-    def lecturEdElexemE(self):
+    def lecturEdElexemE(self,chaoS):
         #fonctioN sympA
         lAlistEdeStraductionSdeSlexemEeS = []
         for indicEdElignE in range(len(self.fichieR)):
             lAlistEdeStraductionSdeSlexemEeSdEcettElignE = []
-            for lexemE in self.fichieR[indicEdElignE][:-1].split(' ') :
-                gauche, droite = traductioN(lexemE, indicEdElignE)
+            for lignE in self.fichieR:
+                if lignE[-1] == '\n':
+                    self.fichieR[self.fichieR.index(lignE)] = lignE[:-1]
+            for lexemE in self.fichieR[indicEdElignE].split(' ') :
+                gauche, droite = traductioN(lexemE, indicEdElignE,chaoS)
                 if gauche:
                     lAlistEdeStraductionSdeSlexemEeSdEcettElignE.append(droite)
                 else:

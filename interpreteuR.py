@@ -34,23 +34,19 @@ erreurSpossibleS = lambda lignE, elemenT : {
     ]
 }
 
-def interpreteR(codE, chaoS):
+def interpreteR(codE,chaoS):
     
     pointeuRdElignE = 0
     compteuRsuRlAlignE = 0
     pilEdELexecutioN = modulEdEpilE.pilE()
     
     while compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
-        
         unitEdEcodE = codE[pointeuRdElignE][compteuRsuRlAlignE]
 
         #for elemenT in pilEdELexecutioN.revienT :
         #    print(elemenT, end = " ")
         #print("")
-        #print(unitEdEcodE)
-        
         if type(unitEdEcodE) == int :
-
             if unitEdEcodE >= len(codE) :
                 print(erreurSpossibleS(lignE, "faire un appel de fonction")["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 return False
@@ -71,7 +67,7 @@ def interpreteR(codE, chaoS):
                 
         elif type(unitEdEcodE) == commentairE :
             
-            resultaTdElAmisEAjouRdUchaoS = unitEdEcodE.initialisatioNdUcommentairE(chaoS)
+            resultaTdElAmisEAjouRdUchaoS = unitEdEcodE.initialisatioNdUcommentairE()
             if not resultaTdElAmisEAjouRdUchaoS[0] :
                 print(resultaTdElAmisEAjouRdUchaoS[1])
                 return False

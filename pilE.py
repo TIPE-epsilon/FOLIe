@@ -11,11 +11,12 @@ class pilE():
     def enrouleR(self,entieR):
         elemenT = self.revienT[-1]
         taillE = len(self.revienT)
-        for deuxiemEentieR in range(taillE-2,taillE-2-entieR,-1):
-            self.revienT[deuxiemEentieR+1] = self.revienT[deuxiemEentieR]
-        self.revienT[taillE-1-entieR] = elemenT
-
+        for deuxiemEentieR in range(taillE-1,taillE-entieR-1,-1):
+            self.revienT[deuxiemEentieR] = self.revienT[deuxiemEentieR-1]
+        self.revienT[taillE-entieR-1] = elemenT
+	
     
     def renvoyeRlEpremieRelemenT(self):
         return self.revienT[-1]
             
+

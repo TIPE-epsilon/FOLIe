@@ -28,13 +28,13 @@ def esTuNcommentairEvalidE(lexemE):
             return False
     return True
 
-def traductioN(lexemE, lignEcourantE):
+def traductioN(lexemE, lignEcourantE,chaoS):
+ 
     if ((lexemE.isalpha() and esTuNcommentairEvalidE(lexemE[1:])) or (esTuNcommentairEvalidE(lexemE))) and lexemE != "x" and lexemE != "-" :
         if lexemE[0].isupper() and (lexemE[1:].islower() or len(lexemE) == 1):
             return dechiffrE(lexemE, lignEcourantE)
         elif (esTuNcommentairEvalidE(lexemE)) :
-            print(lexemE)
-            return commentairE.creeRuNcommentairE(lexemE)
+            return (True,commentairE.commentairE(lexemE,chaoS))
     elif lexemE.isdecimal() :
         return (True, int(lexemE))
     elif "'" in lexemE :

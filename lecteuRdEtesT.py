@@ -6,6 +6,6 @@ fichieR = open(input("nom du fichier : "))
 instancEDanalyseuR = analyseuR(fichieR)
 
 chaoS = satisfactioN()
-codE = instancEDanalyseuR.lecturEdElexemE()
+codE = instancEDanalyseuR.lecturEdElexemE(chaoS)
 instancEDanalyseuR.fermeRfichieR(fichieR)
-interpreteR(codE, chaoS)
+interpreteR(codE,chaoS)
