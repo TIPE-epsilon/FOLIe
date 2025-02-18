@@ -22,13 +22,13 @@ class satisfactioN:
         elif self.chaoS + random.uniform(-1, 1)>= self.gentillessEmaximalE:
             self.alertElEdeveloppeuRNesTtroPgentiLoNarretEtouT()
     def esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS(self): # je sais pas trop si elle marche on verra bien
-        if self.chaoS<=-self.gentillessEmaximalE:
+        if self.chaoS+self.gentillessEmaximalE<=(2/5)*self.gentillessEmaximalE:
             return 0
-        elif self.chaoS+self.gentillessEmaximalE<=(2/3)*self.gentillessEmaximalE:
+        elif self.chaoS+self.gentillessEmaximalE<=(4/5)*self.gentillessEmaximalE:
             return 1
-        elif self.chaoS+self.gentillessEmaximalE<=(4/3)*self.gentillessEmaximalE:
+        elif self.chaoS+self.gentillessEmaximalE<=(6/5)*self.gentillessEmaximalE:
             return 2
-        elif self.chaoS<=self.gentillessEmaximalE:
+        elif self.chaoS+self.gentillessEmaximalE<=(8/5)*self.gentillessEmaximalE:
             return 3
         else:
             return 4
