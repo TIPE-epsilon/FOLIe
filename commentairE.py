@@ -11,16 +11,15 @@ class satisfactioN:
         self.gentillessEmaximalE=10
 
 
-    def alertElEdeveloppeuRNesTpaSgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
-        pass
-    def alertElEdeveloppeuResTtroPgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
-        pass
     def lEdeveloppeuResTiLgentiLaveCmoI(self):
         if self.chaoS + random.uniform(-1, 1)<= -self.gentillessEmaximalE:
-            print('AAAAAAAAAAAAAAAAAAAAAAAA')
-            self.alertElEdeveloppeuRNesTpaSgentiLoNarretEtouT()
+            return -1
         elif self.chaoS + random.uniform(-1, 1)>= self.gentillessEmaximalE:
-            self.alertElEdeveloppeuRNesTtroPgentiLoNarretEtouT()
+            return 0
+        else:
+            return 1
+
+            
     def esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS(self): # je sais pas trop si elle marche on verra bien
         if self.chaoS+self.gentillessEmaximalE<=(2/5)*self.gentillessEmaximalE:
             return 0
@@ -49,7 +48,7 @@ class commentairE():
         for i in range(len(lEcommentairE)):
             if not self.esTtUuNmoTdElAlanguEfrancaisE(lEcommentairE[i]):
                 moTaleatoirE = list(dictionnairE.keys())[random.randint(0, len(dictionnairE.keys()))]
-                return [False, f"J'ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
+                return [False, f"J ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
 
             else:
                 self.chaoS+= dictionnairE[lEcommentairE[i]]*random.uniform(0.5, 1.5)
