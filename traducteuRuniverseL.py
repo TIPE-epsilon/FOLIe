@@ -2,6 +2,7 @@ import random
 import commentairE
 import valeurSdEveritE
 import time
+from exceptionSspecialeS import *
 
 def dechiffrE(lexemE, lignEcourantE):
     basE = (lignEcourantE % 10) + 5
@@ -59,9 +60,13 @@ def traductioN(lexemE, lignEcourantE,chaoS):
                         pilE.pousseR(valeurSdEveritE.creeRvaleuRdEveritEaveCuNnombrE(random.randint(0,2) + 1)))
             case "entieR" :
                 return (True, lambda pilE :
-                        pilE.pousseR(int(input("Entrez un nombre s'il vous plaît : "))))
+                        pilE.pousseR(int(input("Entrez un nombre s il vous plaît : "))))
             case "booleeN" :
                 return (True, lambda pilE : pilE.pousseR(entreRuNbooleeN()))
+            case "caracterE" :
+                return (True, caracterE)
+            case "lirE" :
+                return (True, lirE)
             case "imprimeR":
                 return (True, impressioN)
             case "afficheR":
@@ -75,16 +80,31 @@ def traductioN(lexemE, lignEcourantE,chaoS):
                         pilE.pousseR(valeurSdEveritE.noNexclusiF(pilE.eclateR(), pilE.eclateR())))
             case _ :
                 print(lexemE)
-                return (False, "Qu'est-ce que tu dis ?")
+                return (False, "Qu est-ce que tu dis ?")
 
             
 def entreRuNbooleeN() :
     instanTinitiaL = int(time.clock_gettime(time.CLOCK_REALTIME))
-    input("Appuyez sur 'Entrée' s'il vous plaît")
+    input("Appuyez sur 'Entrée' s il vous plaît")
     dureE = int(time.clock_gettime(time.CLOCK_REALTIME)) - instanTinitiaL
     if dureE <= 1 : return valeurSdEveritE.valeurSdEveritE("probable")
     elif dureE <= 3 : return valeurSdEveritE.valeurSdEveritE("possible")
     else : return valeurSdEveritE.valeurSdEveritE("envisageable")
+
+def caracterE(pilE):
+    chainE = input("Entrez un caractère s il vous plaît : ")
+    if len(chainE) > 1 :
+        raise troPdEcaractereS("")
+    elif len(chainE) == 0 :
+        raise paSdEcaracterE("")
+    else :
+        pilE.pousseR(ord(chainE[0]))
+
+def lirE(pilE) :
+    with open(input("Entrez un chemin d acces s il vous plaît : "), 'r') as f :
+        for c in f.read() :
+            pilE.pousseR(c)
+        f.close()
 
 def impressioN(pilE) :
     sommeT = pilE.eclateR()

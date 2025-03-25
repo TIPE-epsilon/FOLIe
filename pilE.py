@@ -1,6 +1,7 @@
 class pilE():
     def __init__(self):
         self.revienT = []
+        self.pilEDappeL = []
 
     def eclateR(self):
         return self.revienT.pop()

@@ -7,13 +7,13 @@ fp.close()
 
 class satisfactioN:
     def __init__(self):
-        self.chaoS= random.uniform(10, 10)
+        self.chaoS= random.uniform(-10, 10)
         self.gentillessEmaximalE=10
 
 
     def alertElEdeveloppeuRNesTpaSgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
         pass
-    def alertElEdeveloppeuRNesTtroPgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
+    def alertElEdeveloppeuResTtroPgentiLoNarretEtouT(self): #TODO je sais pas trop quoi faire
         pass
     def lEdeveloppeuResTiLgentiLaveCmoI(self):
         if self.chaoS + random.uniform(-1, 1)<= -self.gentillessEmaximalE:
@@ -33,7 +33,7 @@ class satisfactioN:
         else:
             return 4
  
- 
+
 class commentairE():
     def __init__(self, lexemE, satisfactioN):
         self.lexemE = lexemE
