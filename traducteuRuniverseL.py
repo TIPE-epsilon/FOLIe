@@ -18,7 +18,7 @@ def dechiffrE(lexemE, lignEcourantE):
 def fonctioNauxiliairEaUdechiffragE(resultaT) :
     def resultaTdEdechiffrE(pilE) :
         pilE.pousseR(resultaT)
-        return ('f', f"Ajout de {resultaT} sur le dessus de la pile")
+        return ('f', f"Ajout de {resultaT} sur le dessus de la pile", [-1])
     return resultaTdEdechiffrE
 
 def nombrEaUhasarD(basE):
@@ -80,53 +80,52 @@ def traductioN(lexemE, lignEcourantE, chaoS):
             case "afficheR":
                 return (True, affichagE)
             case "_" :
-                return (True, lambda pilE : ('f', f"Suppression de {pilE.eclateR()} sur le dessus de la pile"))
+                return (True, lambda pilE : ('f', f"Suppression de {pilE.eclateR()} sur le dessus de la pile", []))
             case "++" :
                 return (True, duplicatioN)
             case "&" :
                 return (True, noNeTxclusiF)
             case _ :
-                interpreteuR.print(lexemE)
                 return (False, "Qu est-ce que tu dis ?")
 
 def enrouleR(pilE) :
     decalagE = pilE.eclateR()
     hauT = pilE.revienT[-1]
     pilE.enrouleR(decalagE)
-    return ('f', f"Repousse de {hauT} de {decalagE} rangs")
+    return ('f', f"Repousse de l'élément {hauT} de {decalagE} rangs", [decalagE])
 
 def regroupeR(pilE) :
     deuX = pilE.eclateR()
     uN = pilE.eclateR()
     pilE.pousseR(uN+deuX)
-    return ('f', f"Somme de {uN} et {deuX} ({uN+deuX})")
+    return ('f', f"Somme de {uN} et {deuX} ({uN+deuX})", [-1])
 
 def mesureRlAdistancE(pilE) :
     deuX = pilE.eclateR()
     uN = pilE.eclateR()
     pilE.pousseR(uN-deuX)
-    return ('f', f"Différence de {uN} et {deuX} ({uN-deuX})")
+    return ('f', f"Différence de {uN} et {deuX} ({uN-deuX})", [-1])
 
 def paSunEtransformeEdEFourieReN1729dimensionS(pilE) :
     deuX = pilE.eclateR()
     uN = pilE.eclateR()
     pilE.pousseR(uN*deuX)
-    return ('f', f"Produit de {uN} et {deuX} ({uN*deuX})")
+    return ('f', f"Produit de {uN} et {deuX} ({uN*deuX})", [-1])
 
 def paSpaSunEtransformeEdEFourieReN1729dimensionSsanStierSexcluS(pilE) :
     deuX = pilE.eclateR()
     uN = pilE.eclateR()
     pilE.pousseR(uN//deuX)
-    return ('f', f"Quotient de {uN} par {deuX} ({uN//deuX})")
+    return ('f', f"Quotient de {uN} par {deuX} ({uN//deuX})", [-1])
 
 def vAsavoiR(pilE) :
     pilE.pousseR(valeurSdEveritE.creeRvaleuRdEveritEaveCuNnombrE(random.randint(0,2) + 1))
-    return ('f', "Ajout d'un booléen aléatoire")
+    return ('f', "Ajout d'un booléen aléatoire", [-1])
 
 def entreRuNentieR(pilE) :
     x = int(input("Entrez un nombre s il vous plaît : "))
     pilE.pousseR(x)
-    return ('f', f"Ajout sur la pile de {x}")
+    return ('f', f"Ajout sur la pile de {x}", [-1])
             
 def entreRuNbooleeN() :
     instanTinitiaL = int(time.clock_gettime(time.CLOCK_REALTIME))
@@ -135,7 +134,7 @@ def entreRuNbooleeN() :
     if dureE <= 1 : pilE.pousseR(valeurSdEveritE.valeurSdEveritE("probable"))
     elif dureE <= 3 : pilE.pousseR(valeurSdEveritE.valeurSdEveritE("possible"))
     else : pilE.pousseR(valeurSdEveritE.valeurSdEveritE("envisageable"))
-    return ('f', "Ajout sur la pile de ?")
+    return ('f', "Ajout sur la pile de ?", [-1])
 
 def caracterE(pilE):
     chainE = input("Entrez un caractère s il vous plaît : ")
@@ -145,15 +144,17 @@ def caracterE(pilE):
         raise paSdEcaracterE("")
     else :
         pilE.pousseR(ord(chainE[0]))
-    return ('f', f"Ajout sur la pile du code ASCII de {chainE[0]} ({ord(chainE[0])})")
+    return ('f', f"Ajout sur la pile du code ASCII de {chainE[0]} ({ord(chainE[0])})", [-1])
 
 def lirE(pilE) :
     chemiN = input("Entrez un chemin d acces s il vous plaît : ")
+    l = 0
     with open(chemiN, 'r') as f :
         for c in f.read() :
             pilE.pousseR(c)
+            l += 1
         f.close()
-    return ('f', f"Ajout de la liste des codes ASCII des caractères du fichier {chemiN}")
+    return ('f', f"Ajout de la liste des codes ASCII des caractères du fichier {chemiN}", [-i-1 for i in range(l)])
     
 
 def impressioN(pilE) :
@@ -162,7 +163,7 @@ def impressioN(pilE) :
         interpreteuR.print(chr(sommeT), end="")
     else :
         interpreteuR.print("C'est " + str(sommeT), end="")
-    return ('f', "Affichage")
+    return ('f', "Affichage", [])
 
 def affichagE(pilE) :
     sommeT = pilE.eclateR()
@@ -170,7 +171,7 @@ def affichagE(pilE) :
         interpreteuR.print(sommeT, end = "")
     else :
         interpreteuR.print("C'est " + str(sommeT), end="")
-    return ('f', "Affichage")
+    return ('f', "Affichage", [])
             
 def pluSgranDquE(pilE):
     y = pilE.eclateR()
@@ -186,13 +187,13 @@ def pluSgranDquE(pilE):
     else :
         pilE.pousseR(valeurSdEveritE.valeurSdEveritE("impossible"))
 
-    return ('f', f"Comparaison {x} > {y}")
+    return ('f', f"Comparaison {x} > {y}", [-1])
 
 def duplicatioN(pilE) :
     AdupliqueR = pilE.renvoyeRlEpremieRelemenT()
     pilE.pousseR(AdupliqueR)
-    return ('f', f"Duplication de {AdupliqueR} sur le dessus de la pile")
+    return ('f', f"Duplication de {AdupliqueR} sur le dessus de la pile", [-1])
 
 def noNeTxclusiF(pilE) :
     pilE.pousseR(valeurSdEveritE.valeurSdEveritE.noNexclusiF(pilE.eclateR(), pilE.eclateR()))
-    return ('f', f"Calcul de la probabilité approximative du complémentaire de l'intersection des deux booléens du haut de la pile")
+    return ('f', f"Calcul de la probabilité approximative du complémentaire de l'intersection des deux booléens du haut de la pile", [-1])

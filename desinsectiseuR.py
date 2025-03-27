@@ -7,9 +7,11 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
 
         erreuR = False
         sauT = None
+        impliqueS = []
         print("Dernière opération effectuée : ", end = "")
         match operatioN :
-            case ('f', chainE) :
+            case ('f', chainE, impliqueSlocauX) :
+                impliqueS = impliqueSlocauX
                 print(chainE)
             case ('e', chainE) :
                 print(chainE)
@@ -49,11 +51,13 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
         print("\n\033[4mPile :\033[0m\n")
 
         print("\033[1m\033[91m[\033[0m", end=' ')
-        for x in pilE.revienT :
-            if type(x) == int :
-                print(str(x) + chRpaSchR(x), end = ' \033[1m\033[91m|\033[0m ')
+        for x in range(len(pilE.revienT)) :
+            if x in impliqueS or x - len(pilE.revienT) in impliqueS :
+                print("\033[92m", end='')
+            if type(pilE.revienT[x]) == int :
+                print(str(pilE.revienT[x]) + chRpaSchR(pilE.revienT[x]) + "\033[0m", end = ' \033[1m\033[91m|\033[0m ')
             else :
-                print('?', end = ' \033[1m\033[91m|\033[0m ')
+                print('?\033[0m', end = ' \033[1m\033[91m|\033[0m ')
         print("->\n")
 
         input("\033[5m\033[2m(Appuyer sur une touche pour continuer)\033[0m")
