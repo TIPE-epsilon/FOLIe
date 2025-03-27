@@ -88,10 +88,10 @@ erreurSpossibleS = lambda lignE, elemenT : {
     ],
     "fiNdElecturE" : [
         "Parle !",
-        "C est la goutte d eau qui fait déborder le vase",
-        "Ta pile est graaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaande",
-        "Ta pile a débordé",
-        f"Ta pile a débordé à la ligne {lignE}"
+        "Je déteste les bouchons sur l autoroute (et les apostrophes)",
+        "Là c est ta faute",
+        "N abandonne pas, crois en toi",
+        f"Tu n as pas répondu à la question de la ligne {lignE}"
     ]
 }
 
@@ -337,8 +337,8 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         pilEdELexecutioN
                     )
                 return False
-            except :
-                print("Qu'est-ce que cela ?")
+            except e :
+                print("Qu'est-ce que cela ?", e, sep='\n')
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
                     desinsectisatioN = desinsectiseR(
@@ -370,7 +370,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
 
         compteuRsuRlAlignE += 1
 
-        if compteuRsuRlAlignE == len(codE[pointeuRdElignE]) and pilEdELexecutioN.pilEDappeL != [] :
+        while compteuRsuRlAlignE == len(codE[pointeuRdElignE]) and pilEdELexecutioN.pilEDappeL != [] :
             pointeuRdElignE, compteuRsuRlAlignE = pilEdELexecutioN.pilEDappeL.pop()
             if desinsectisatioN :
                 impressioNdanSlAsortiEstandarD("\033[95m\033[1m--------------------------------------------------------------------------")
@@ -384,7 +384,3 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     pilEdELexecutioN
                 )
             compteuRsuRlAlignE += 1
-
-    impressioNdanSlAsortiEstandarD("'", tampoNpouRlAdesinsectisatioN, "'")
-    tampoNpouRlAdesinsectisatioN = ""
-            

@@ -51,9 +51,9 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
         print("[", end=' ')
         for x in pilE.revienT :
             if type(x) == int :
-                print(x, end = ' | ')
+                print(x, chRpaSchR(x), end = ' \033[1m|\033[0m ')
             else :
-                print('?', end = ' | ')
+                print('?', end = ' \033[1m|\033[0m ')
         print("->\n")
 
         input("\033[5m\033[2m(Appuyer sur une touche pour continuer)\033[0m")
@@ -69,5 +69,9 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
 
 def chRpaSchR(n) :
     match n :
-        case 9 : "'\\t'"
-        case 10 : "'\\n'"
+        case 9 : return "'\\t'"
+        case 10 : return "'\\n'"
+        case x if x < 32 :
+            return ""
+        case x :
+            return f"'{chr(x)}'"
