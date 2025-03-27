@@ -45,21 +45,7 @@ class valeurSdEveritE:
     
     def noNexclusiF(premièrEvaleuRdEveritE,deuxièmEvaleuRdEveritE):#renvoiE lA valeuR dE véritE associéE aU noN exclusiF deS deuX entréeS
         if premièrEvaleuRdEveritE.valeuRdEveritE == 0:
-            if deuxièmEvaleuRdEveritE.valeuRdEveritE == 0:
-                return valeurSdEveritE("impossible")
-
-            elif deuxièmEvaleuRdEveritE.valeuRdEveritE == 1:
-                return valeurSdEveritE("impossible")
-
-            elif deuxièmEvaleuRdEveritE.valeuRdEveritE == 2:
-                return valeurSdEveritE("impossible")
-
-            elif deuxièmEvaleuRdEveritE.valeuRdEveritE == 3:
-                return valeurSdEveritE("impossible")
-            
-            elif deuxièmEvaleuRdEveritE.valeuRdEveritE == 4:
-                return valeurSdEveritE("impossible")
-            
+            return valeurSdEveritE("certain")
         elif premièrEvaleuRdEveritE.valeuRdEveritE == 1:
             
             if deuxièmEvaleuRdEveritE.valeuRdEveritE == 0:
