@@ -2,6 +2,7 @@ import random
 import commentairE
 import valeurSdEveritE
 import time
+import interpreteuR
 from exceptionSspecialeS import *
 
 def dechiffrE(lexemE, lignEcourantE):
@@ -85,7 +86,7 @@ def traductioN(lexemE, lignEcourantE, chaoS):
             case "&" :
                 return (True, noNeTxclusiF)
             case _ :
-                print(lexemE)
+                interpreteuR.print(lexemE)
                 return (False, "Qu est-ce que tu dis ?")
 
 def enrouleR(pilE) :
@@ -158,17 +159,17 @@ def lirE(pilE) :
 def impressioN(pilE) :
     sommeT = pilE.eclateR()
     if type(sommeT) == int :
-        print(chr(sommeT), end="")
+        interpreteuR.print(chr(sommeT), end="")
     else :
-        print("C'est " + str(sommeT), end="")
+        interpreteuR.print("C'est " + str(sommeT), end="")
     return ('f', "Affichage")
 
 def affichagE(pilE) :
     sommeT = pilE.eclateR()
     if type(sommeT) == int :
-        print(sommeT, end = "")
+        interpreteuR.print(sommeT, end = "")
     else :
-        print("C'est " + str(sommeT), end="")
+        interpreteuR.print("C'est " + str(sommeT), end="")
     return ('f', "Affichage")
             
 def pluSgranDquE(pilE):

@@ -2,7 +2,7 @@ import pilE as modulEdEpilE
 import random
 from commentairE import *
 from exceptionSspecialeS import *
-from desinsectificateuR import *
+from desinsectiseuR import *
 import valeurSdEveritE as modulEdEvaleurSdEveritE
 
 erreurSpossibleS = lambda lignE, elemenT : {
@@ -95,7 +95,22 @@ erreurSpossibleS = lambda lignE, elemenT : {
     ]
 }
 
-def interpreteR(codE, chaoS, desinsectificatioN=None):
+impressioNdanSlAsortiEstandarD = print
+print = print
+
+
+tampoNpouRlAdesinsectisatioN = ""
+def faussEimpressioN(*args, sep=' ', end='\n'):
+    global tampoNpouRlAdesinsectisatioN
+    for e in args[:-1] :
+        tampoNpouRlAdesinsectisatioN += str(e) + sep
+    if args :
+        tampoNpouRlAdesinsectisatioN += args[-1]
+    tampoNpouRlAdesinsectisatioN += end
+
+def interpreteR(codE, chaoS, desinsectisatioN=None):
+    global tampoNpouRlAdesinsectisatioN
+    global print
     
     pointeuRdElignE = 0
     compteuRsuRlAlignE = 0
@@ -103,11 +118,16 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
     
     while compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
 
+        if desinsectisatioN :
+            print = faussEimpressioN
+        else :
+            print = impressioNdanSlAsortiEstandarD
+
         operatioN = None
         
-        if desinsectificatioN :
-            print("\033[95m\033[1m--------------------------------------------------------------------------")
-            print("---------------------- \033[0mAffichages de votre programme\033[95m\033[1m ---------------------\033[0m\n")
+        if desinsectisatioN :
+            impressioNdanSlAsortiEstandarD("\033[95m\033[1m--------------------------------------------------------------------------")
+            impressioNdanSlAsortiEstandarD("---------------------- \033[0mAffichages de votre programme\033[95m\033[1m ---------------------\033[0m\n")
         
         unitEdEcodE = codE[pointeuRdElignE][compteuRsuRlAlignE]
 
@@ -117,9 +137,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
         if type(unitEdEcodE) == int :
             if unitEdEcodE >= len(codE) :
                 print(erreurSpossibleS(lignE, "faire un appel de fonction")["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -128,10 +149,11 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             
             if len(pilEdELexecutioN.revienT) == 0 :
-                print(erreurSpossibleS(lignE, "faire un appel de fonction")["lApilEdELexecutioNesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                print(erreurSpossibleS(lignE, "faire un appel de fonction")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -142,9 +164,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
             conditioNdEsauT = pilEdELexecutioN.eclateR()
             if type(conditioNdEsauT) != modulEdEvaleurSdEveritE.valeurSdEveritE :
                 print(erreurSpossibleS(pointeuRdElignE, conditioNdEsauT)["jEnEsuiSpaSuNbooleeN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -158,6 +181,8 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 pilEdELexecutioN.pilEDappeL.append((pointeuRdElignE, compteuRsuRlAlignE))
                 pointeuRdElignE = unitEdEcodE
                 compteuRsuRlAlignE = -1
+            else :
+                operatioN = ("ns", pointeuRdElignE, compteuRsuRlAlignE)
                 
                 
         elif type(unitEdEcodE) == commentairE :
@@ -166,9 +191,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
             operatioN = ('c', unitEdEcodE)
             if not resultaTdElAmisEAjouRdUchaoS[0] :
                 print(resultaTdElAmisEAjouRdUchaoS[1])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -181,9 +207,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 operatioN = unitEdEcodE(pilEdELexecutioN)
             except TypeError :
                 print(erreurSpossibleS(pointeuRdElignE, unitEdEcodE)["erreuRdEtypE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -191,10 +218,11 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                     )
                 return False
             except IndexError :
-                print(erreurSpossibleS(pointeuRdElignE, f"appliquer la fonction {unitEdEcodE}")["lApilEdELexecutioNesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                print(erreurSpossibleS(pointeuRdElignE, f"appliquer la fonction {unitEdEcodE}")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -203,9 +231,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except ZeroDivisionError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["divisioNpaRzerO"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -214,9 +243,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except troPdEcaractereS as e :
                 print(erreurSpossibleS(pointeuRdElignE, "")["troPdEcaractereS"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -225,9 +255,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except paSdEcaracterE as e :
                 print(erreurSpossibleS(pointeuRdElignE, "")["paSdEcaracterE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -236,9 +267,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except FileNotFoundError as e :
                 print(erreurSpossibleS(pointeuRdElignE, e.filename)["paSdEfichieR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -247,9 +279,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except PermissionError as e :
                 print(erreurSpossibleS(pointeuRdElignE, e.filename)["paSdEdroiT"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -258,9 +291,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except KeyboardInterrupt :
                 print(erreurSpossibleS(pointeuRdElignE, "")["interruptioNpaRlEclavieR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -268,10 +302,11 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                     )
                 return False
             except MemoryError :
-                print(erreurSpossibleS(pointeuRdElignE, "")["troPgrandEpilEdELexecutioN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                print(erreurSpossibleS(pointeuRdElignE, "")["troPgrandEpilE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -280,9 +315,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except OverflowError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["surflot"][0])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -291,9 +327,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except EOFError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["fiNdElecturE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -302,9 +339,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
                 return False
             except :
                 print("Qu'est-ce que cela ?")
-                if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
                         pointeuRdElignE,
                         compteuRsuRlAlignE,
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
@@ -319,9 +357,10 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
             print(conditioNDarreT[1])
             return False
 
-        if desinsectificatioN :
-            desinsectificatioN = desinsectifieR(
-                desinsectificatioN,
+        if desinsectisatioN :
+            impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+            desinsectisatioN = desinsectiseR(
+                desinsectisatioN,
                 pointeuRdElignE,
                 compteuRsuRlAlignE,
                 operatioN,
@@ -333,14 +372,19 @@ def interpreteR(codE, chaoS, desinsectificatioN=None):
 
         if compteuRsuRlAlignE == len(codE[pointeuRdElignE]) and pilEdELexecutioN.pilEDappeL != [] :
             pointeuRdElignE, compteuRsuRlAlignE = pilEdELexecutioN.pilEDappeL.pop()
-            if desinsectificatioN :
-                    desinsectificatioN = desinsectifieR(
-                        desinsectificatioN,
-                        pointeuRdElignE,
-                        compteuRsuRlAlignE,
-                        ('r', f"Retour de l appel à {codE[pointeuRdElignE][compteuRsuRlAlignE]}"),
-                        pilEdELexecutioN
-                    )
+            if desinsectisatioN :
+                impressioNdanSlAsortiEstandarD("\033[95m\033[1m--------------------------------------------------------------------------")
+                impressioNdanSlAsortiEstandarD("---------------------- \033[0mAffichages de votre programme\033[95m\033[1m ---------------------\033[0m\n")
+                impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                desinsectisatioN = desinsectiseR(
+                    desinsectisatioN,
+                    pointeuRdElignE,
+                    compteuRsuRlAlignE,
+                    ('r', f"Retour de l appel à {codE[pointeuRdElignE][compteuRsuRlAlignE]}"),
+                    pilEdELexecutioN
+                )
             compteuRsuRlAlignE += 1
-            
+
+    impressioNdanSlAsortiEstandarD("'", tampoNpouRlAdesinsectisatioN, "'")
+    tampoNpouRlAdesinsectisatioN = ""
             

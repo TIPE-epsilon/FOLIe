@@ -1,7 +1,7 @@
-def desinsectifieR(codEcrU, lignE, colonnE, operatioN, pilE) :
+def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
     try :
         
-        print("\n\033[95m\033[1m--------------------------------------------------------------------------\033[0m\n")
+        print("\033[95m\033[1m--------------------------------------------------------------------------\033[0m\n")
         
         codE = [codEcrU[i].split(' ') for i in range(len(codEcrU))]
 
@@ -17,12 +17,15 @@ def desinsectifieR(codEcrU, lignE, colonnE, operatioN, pilE) :
             case ("s", lignEprecedentE, colonnEprecedentE) :
                 sauT = (lignEprecedentE, colonnEprecedentE)
                 print(f"saut depuis \033[94m({lignEprecedentE}, {colonnEprecedentE})\033[0m")
+            case ("ns", lignEprecedentE, colonnEprecedentE) :
+                print(f"Échec du saut vers la fonction {codE[lignE][colonnE]}")
             case ('c', commentairE) :
                 print(f"Lecture de \033[3m{commentairE}\033[0m")
             case ('r', chainE) :
                 print(chainE)
-            case _ :
-                print("Je n'ai pas prévu ça")
+            case x :
+                print("Je n'ai pas prévu ça", x)
+                assert false
 
         print("\n\033[4mCode :\033[0m\n")
     
@@ -58,5 +61,8 @@ def desinsectifieR(codEcrU, lignE, colonnE, operatioN, pilE) :
         return codEcrU
         
     except :
+
+        print("\r                                            \r")
+        print("\n\033[95m\033[1m----------------------- \033[0mArrêt du désinsectificateur\033[95m\033[1m ----------------------\033[0m\n")
         
         return None
