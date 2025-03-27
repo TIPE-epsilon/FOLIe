@@ -48,12 +48,12 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
 
         print("\n\033[4mPile :\033[0m\n")
 
-        print("[", end=' ')
+        print("\033[1m\033[91m[\033[0m", end=' ')
         for x in pilE.revienT :
             if type(x) == int :
-                print(x, chRpaSchR(x), end = ' \033[1m|\033[0m ')
+                print(str(x) + chRpaSchR(x), end = ' \033[1m\033[91m|\033[0m ')
             else :
-                print('?', end = ' \033[1m|\033[0m ')
+                print('?', end = ' \033[1m\033[91m|\033[0m ')
         print("->\n")
 
         input("\033[5m\033[2m(Appuyer sur une touche pour continuer)\033[0m")
@@ -63,15 +63,19 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
     except :
 
         print("\r                                            \r")
-        print("\n\033[95m\033[1m----------------------- \033[0mArrêt du désinsectificateur\033[95m\033[1m ----------------------\033[0m\n")
+        print("\n\033[95m\033[1m----------------------- \033[0mArrêt du désinsectiseur\033[95m\033[1m ----------------------\033[0m\n")
         
         return None
 
 def chRpaSchR(n) :
     match n :
-        case 9 : return "'\\t'"
-        case 10 : return "'\\n'"
+        case 0 : return " '\\0'"
+        case 9 : return " '\\t'"
+        case 10 : return " '\\n'"
+        case 13 : return " '\\r'"
         case x if x < 32 :
             return ""
-        case x :
-            return f"'{chr(x)}'"
+        case x if x < 0x110000 :
+            return f" '{chr(x)}'"
+        case _ :
+            return ""

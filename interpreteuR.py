@@ -337,7 +337,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         pilEdELexecutioN
                     )
                 return False
-            except e :
+            except _ as e :
                 print("Qu'est-ce que cela ?", e, sep='\n')
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
