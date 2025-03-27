@@ -105,7 +105,7 @@ def faussEimpressioN(*args, sep=' ', end='\n'):
     for e in args[:-1] :
         tampoNpouRlAdesinsectisatioN += str(e) + sep
     if args :
-        tampoNpouRlAdesinsectisatioN += args[-1]
+        tampoNpouRlAdesinsectisatioN += str(args[-1])
     tampoNpouRlAdesinsectisatioN += end
 
 def interpreteR(codE, chaoS, desinsectisatioN=None):
