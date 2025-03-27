@@ -194,5 +194,5 @@ def duplicatioN(pilE) :
     return ('f', f"Duplication de {AdupliqueR} sur le dessus de la pile")
 
 def noNeTxclusiF(pilE) :
-    pilE.pousseR(valeurSdEveritE.noNexclusiF(pilE.eclateR(), pilE.eclateR()))
+    pilE.pousseR(valeurSdEveritE.valeurSdEveritE.noNexclusiF(pilE.eclateR(), pilE.eclateR()))
     return ('f', f"Calcul de la probabilité approximative du complémentaire de l'intersection des deux booléens du haut de la pile")
