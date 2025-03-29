@@ -16,11 +16,12 @@ def demarragE():
             existencE = True
             try:
                 chemiNdUfichieR = input("\nnom du fichier : ")
-                desinsectifieR = chemiNdUfichieR[-1] == 'd'
-                if desinsectifieR:
-                    fichieR = open(chemiNdUfichieR[:-1])
-                else:
-                    fichieR = open(chemiNdUfichieR)
+                if chemiNdUfichieR!="":
+                    desinsectifieR = chemiNdUfichieR[-1] == 'd'
+                    if desinsectifieR:
+                        fichieR = open(chemiNdUfichieR[:-1])
+                    else:
+                        fichieR = open(chemiNdUfichieR)
             except FileNotFoundError:
                 print("Ce chemin de fichier n existe pas, réessayez:")
                 existencE = False
