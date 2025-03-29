@@ -12,13 +12,13 @@ def demarragE():
     try:
         continueR = True
         while True:
-            desinsectifeR = False
+            desinsectifieR = False
             existencE = True
             try:
                 chemiNdUfichieR = input("\nnom du fichier : ")
                 if chemiNdUfichieR!="":
                     desinsectifieR = chemiNdUfichieR[-1] == 'd'
-                if desinsectfieR:
+                if desinsectifieR:
                     fichieR = open(chemiNdUfichieR[:-1])
                 else:
                     fichieR = open(chemiNdUfichieR)
