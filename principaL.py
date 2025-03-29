@@ -34,7 +34,7 @@ def demarragE():
                 else:
                     celASesTbieNpassE = interpreteR(codE,chaoS)
                 if celASesTbieNpassE:
-                    continueR = input("\ncontinuer (o/n)? ").lower().strip() == 'o'
+                    continueR = input("\ncontinuer (O/n)? ").lower().strip() != 'n'
                     if not continueR:
                         exit()
         return True
