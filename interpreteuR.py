@@ -116,7 +116,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
     compteuRsuRlAlignE = 0
     pilEdELexecutioN = modulEdEpilE.pilE()
     
-    while compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
+    while pointeuRdElignE<len(codE) and compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
 
         if desinsectisatioN :
             print = faussEimpressioN
@@ -136,7 +136,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
         #print("")
         if type(unitEdEcodE) == int :
             if unitEdEcodE >= len(codE) :
-                print(erreurSpossibleS(lignE, "faire un appel de fonction")["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                print(erreurSpossibleS(pointeuRdElignE, "faire un appel de fonction")["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
                     desinsectisatioN = desinsectiseR(
@@ -149,7 +149,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                 return False
             
             if len(pilEdELexecutioN.revienT) == 0 :
-                print(erreurSpossibleS(lignE, "faire un appel de fonction")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                print(erreurSpossibleS(pointeuRdElignE, "faire un appel de fonction")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
                     desinsectisatioN = desinsectiseR(
@@ -384,3 +384,4 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     pilEdELexecutioN
                 )
             compteuRsuRlAlignE += 1
+    return True

@@ -1,0 +1,27 @@
+from analyseuR import *
+from interpreteuR import *
+from commentairE import *
+import sys
+sys.set_int_max_str_digits(2**(31)-1)
+
+
+
+def demarragE():
+    chaoS = satifsfactioN()
+    continueR = True
+    celASesTbieNpassE = False
+    while continueR:
+        fichieR = open(input("nom du fichier : "))
+        instancEDanalyseuR = analyseuR(fichieR)
+        codE  = instancEDanalyseuR.lecturEdElexemE(chaoS)
+        instancEDanalyseuR.fermeRfichieR(fichieR)
+        if not celASesTbieNpassE:
+            celASesTbieNpassE = interpreteR(codE, chaoS, desinsectisatioN=instancEDanalyseuR.fichieR)
+        if celASesTbieNpassE:
+            continueR = bool(input("continuer ? "))
+
+
+
+    return True
+
+demarragE()
