@@ -128,6 +128,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
     compteuRsuRlAlignE = 0
     pilEdELexecutioN = modulEdEpilE.pilE()
     while pointeuRdElignE<len(codE) and compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
+        
         if desinsectisatioN :
             print = faussEimpressioN
         else :
@@ -199,8 +200,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                 
                 
         elif type(unitEdEcodE) == commentairE :
-            
-            resultaTdElAmisEAjouRdUchaoS = unitEdEcodE.initialisatioNdUcommentairE()
+            resultaTdElAmisEAjouRdUchaoS = unitEdEcodE.validE
             operatioN = ('c', unitEdEcodE)
             if not resultaTdElAmisEAjouRdUchaoS[0] :
                 print(resultaTdElAmisEAjouRdUchaoS[1])
@@ -215,7 +215,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     )
                 chaoS.chaoS-=1
                 return False
-            
+
         else :
             try :
                 operatioN = unitEdEcodE(pilEdELexecutioN)
@@ -321,6 +321,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except MemoryError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["troPgrandEpilE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -407,7 +408,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
             
 
         compteuRsuRlAlignE += 1
-
+        
         while compteuRsuRlAlignE == len(codE[pointeuRdElignE]) and pilEdELexecutioN.pilEDappeL != [] :
             pointeuRdElignE, compteuRsuRlAlignE = pilEdELexecutioN.pilEDappeL.pop()
             if desinsectisatioN :
@@ -422,6 +423,8 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     pilEdELexecutioN
                 )
             compteuRsuRlAlignE += 1
+        
+
     if chaoS.chaoS<=5:
         chaoS.chaoS+=1
     return True

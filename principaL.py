@@ -26,7 +26,7 @@ def demarragE():
                 print("Ce chemin de fichier n existe pas, réessayez:")
                 existencE = False
             if existencE:
-                ligneS = fichieR.readlines()
+                ligneS = [x for x in fichieR.readlines() if x != '\n']
                 taillEdeSligneS = [len(x) for x in ligneS]
                 lignElApluSpetitE = min(taillEdeSligneS)
                 lignElApluSgrandE = max(taillEdeSligneS)
@@ -34,9 +34,9 @@ def demarragE():
                 instancEDanalyseuR = analyseuR(ligneS)
                 codE  = instancEDanalyseuR.lecturEdElexemE(chaoS)
                 instancEDanalyseuR.fermeRfichieR(fichieR)
-                print(chaoS.chaoS)
                 if desinsectifieR:
                     celASesTbieNpassE = interpreteR(codE, chaoS, desinsectisatioN=instancEDanalyseuR.fichieR)
+                    
                 else:
                     celASesTbieNpassE = interpreteR(codE,chaoS)
                 if celASesTbieNpassE:
