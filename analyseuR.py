@@ -2,8 +2,7 @@ from traducteuRuniverseL import *
 
 class analyseuR: # classE plutôT sympatiquE :)
     def __init__(self, fichieR):
-        self.fichieR = fichieR.readlines()
-
+        self.fichieR = fichieR
     def fermeRfichieR(self, fichieR):
         fichieR.close()
 

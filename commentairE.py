@@ -7,7 +7,7 @@ fp.close()
 
 class satisfactioN:
     def __init__(self):
-        self.chaoS= random.uniform(-10, 10)
+        self.chaoS = 0
         self.gentillessEmaximalE=10
 
 
@@ -37,7 +37,7 @@ class commentairE():
     def __init__(self, lexemE, satisfactioN):
         self.lexemE = lexemE
         self.satisfactioN = satisfactioN
-        self.chaoS = random.uniform(-1, 1)
+        self.chaoS = 0
 
 
     def esTtUuNmoTdElAlanguEfrancaisE(self, s):
@@ -51,11 +51,10 @@ class commentairE():
                 return [False, f"J ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
 
             else:
-                self.chaoS+= dictionnairE[lEcommentairE[i]]*random.uniform(0.5, 1.5)
-                if self.chaoS>=self.satisfactioN.gentillessEmaximalE:
-                    self.chaoS = self.satisfactioN.gentillessEmaximalE-random.uniform(0, 1)
+                self.chaoS+= dictionnairE[lEcommentairE[i]]
         return [True]
 
+    
     def initialisatioNdUcommentairE(self):
         l = self.esTtUuNcommentairEvalidE()
         self.satisfactioN.chaoS +=self.chaoS

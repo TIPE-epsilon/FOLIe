@@ -118,13 +118,16 @@ def faussEimpressioN(*args, sep=' ', end='\n'):
 def interpreteR(codE, chaoS, desinsectisatioN=None):
     global tampoNpouRlAdesinsectisatioN
     global print
-    
+    if chaoS.chaoS > chaoS.gentillessEmaximalE:# trop gentil
+        impressioNdanSlAsortiEstandarD("\nArrête de te moquer de moi, je vois bien que ces messages ne sont pas sincères")
+        return False
+    if chaoS.chaoS < -chaoS.gentillessEmaximalE:# trop méchant
+        impressioNdanSlAsortiEstandarD("\nNon mais ça va pas ? Je ne travaille pas dans ces conditions, respecte moi plus")
+        return False
     pointeuRdElignE = 0
     compteuRsuRlAlignE = 0
     pilEdELexecutioN = modulEdEpilE.pilE()
-    
     while pointeuRdElignE<len(codE) and compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
-
         if desinsectisatioN :
             print = faussEimpressioN
         else :
@@ -153,6 +156,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             
             if len(pilEdELexecutioN.revienT) == 0 :
@@ -166,6 +170,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
                 
             conditioNdEsauT = pilEdELexecutioN.eclateR()
@@ -180,6 +185,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             
             choiXaleatoirE = random.randint(1,4)
@@ -207,6 +213,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             
         else :
@@ -223,6 +230,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except IndexError :
                 print(erreurSpossibleS(pointeuRdElignE, f"appliquer la fonction {unitEdEcodE}")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -235,6 +243,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except ZeroDivisionError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["divisioNpaRzerO"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -247,6 +256,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except troPdEcaractereS as e :
                 print(erreurSpossibleS(pointeuRdElignE, "")["troPdEcaractereS"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -259,6 +269,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except paSdEcaracterE as e :
                 print(erreurSpossibleS(pointeuRdElignE, "")["paSdEcaracterE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -271,6 +282,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except FileNotFoundError as e :
                 print(erreurSpossibleS(pointeuRdElignE, e.filename)["paSdEfichieR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -283,6 +295,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except PermissionError as e :
                 print(erreurSpossibleS(pointeuRdElignE, e.filename)["paSdEdroiT"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -295,6 +308,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except KeyboardInterrupt :
                 print(erreurSpossibleS(pointeuRdElignE, "")["interruptioNpaRlEclavieR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -319,6 +333,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except OverflowError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["surflot"][0])
@@ -331,6 +346,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except EOFError :
                 print(erreurSpossibleS(pointeuRdElignE, "")["fiNdElecturE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -343,6 +359,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except ValueError:
                 print(erreurSpossibleS(pointeuRdElignE, "")["erreuRdEvaleuR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
@@ -355,6 +372,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
             except Exception as e :
                 print("Qu'est-ce que cela ?", e, sep='\n')
@@ -367,6 +385,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         ('e', "\033[91m\033[1mERREUR\033[0m"),
                         pilEdELexecutioN
                     )
+                chaoS.chaoS-=1
                 return False
 
 
@@ -403,4 +422,6 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     pilEdELexecutioN
                 )
             compteuRsuRlAlignE += 1
+    if chaoS.chaoS<=5:
+        chaoS.chaoS+=1
     return True

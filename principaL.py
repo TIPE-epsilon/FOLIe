@@ -8,7 +8,7 @@ chaoS = satisfactioN()
 celASesTbieNpassE = False
 
 def demarragE():
-    global celASesTbieNpassE
+    global celASesTbieNpassE,chaoS
     try:
         continueR = True
         while True:
@@ -26,9 +26,15 @@ def demarragE():
                 print("Ce chemin de fichier n existe pas, réessayez:")
                 existencE = False
             if existencE:
-                instancEDanalyseuR = analyseuR(fichieR)
+                ligneS = fichieR.readlines()
+                taillEdeSligneS = [len(x) for x in ligneS]
+                lignElApluSpetitE = min(taillEdeSligneS)
+                lignElApluSgrandE = max(taillEdeSligneS)
+                chaoS.chaoS += 4*(lignElApluSpetitE/lignElApluSgrandE)-2
+                instancEDanalyseuR = analyseuR(ligneS)
                 codE  = instancEDanalyseuR.lecturEdElexemE(chaoS)
                 instancEDanalyseuR.fermeRfichieR(fichieR)
+                print(chaoS.chaoS)
                 if desinsectifieR:
                     celASesTbieNpassE = interpreteR(codE, chaoS, desinsectisatioN=instancEDanalyseuR.fichieR)
                 else:
@@ -36,17 +42,17 @@ def demarragE():
                 if celASesTbieNpassE:
                     continueR = input("\ncontinuer (O/n)? ").lower().strip() != 'n'
                     if not continueR:
-                        exit()
+                        sys.exit()
         return True
     except KeyboardInterrupt:
         if celASesTbieNpassE:
-            exit()
+            sys.exit()
         else:
             demarragE()
 
     except EOFError:
         if celASesTbieNpassE:
-            exit()
+            sys.exit()
         else:
             demarragE()
 demarragE()

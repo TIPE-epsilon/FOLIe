@@ -43,7 +43,9 @@ def traductioN(lexemE, lignEcourantE, chaoS):
         if lexemE[0].isupper() and (lexemE[1:].islower() or len(lexemE) == 1):
             return dechiffrE(lexemE, lignEcourantE)
         elif (esTuNcommentairEvalidE(lexemE)) :
-            return (1, commentairE.commentairE(lexemE,chaoS))
+            commentairEeNquestioN =  commentairE.commentairE(lexemE,chaoS)
+            commentairEeNquestioN.initialisatioNdUcommentairE()
+            return (1,commentairEeNquestioN)
         
     elif lexemE.isdecimal() :
         return (1, int(lexemE))
