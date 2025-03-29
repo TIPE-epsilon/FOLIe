@@ -8,7 +8,7 @@ fp.close()
 class satisfactioN:
     def __init__(self):
         self.chaoS = 0
-        self.gentillessEmaximalE=10
+        self.gentillessEmaximalE=25
 
 
     def lEdeveloppeuResTiLgentiLaveCmoI(self):

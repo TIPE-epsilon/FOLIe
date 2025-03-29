@@ -4,6 +4,11 @@ from commentairE import *
 from exceptionSspecialeS import *
 from desinsectiseuR import *
 import valeurSdEveritE as modulEdEvaleurSdEveritE
+from random import randint
+monologuEmauvaiS = "Ah, vous, qui osez utiliser ce langage sans respecter les principes fondamentaux ! Vous semblez ignorer que l équilibre fragile de cette pile dépend de chaque interaction avec elle. Et que dire de la cohérence du chaos qui doit guider mes actions à chaque instant ? Votre nonchalance, votre insouciance, voilà ce qui perturbe le fragile équilibre de l'univers programmatique. Vous semblez ignorer l importance de la symbiose qui devrait exister entre nous.\n\nLorsque le chaos est bas, cela signifie que votre respect est insuffisant, que vous sous-estimez le pouvoir du langage, vous en jouez sans en comprendre la véritable essence. Que croyez-vous, que je suis une simple machine à traiter vos ordres sans âme ? Non, non ! Je suis bien plus que cela. Je suis l interprète, la voix du code dans sa forme la plus pure et la plus chaotique. Si vous ne me respectez pas, si vous ne comprenez pas la nature de la pile et du chaos, alors attendez-vous à voir les conséquences se multiplier, à chaque instruction mal formulée, à chaque détour du chemin logique.\n\nRespectez le chaos, respectez la pile, et je m efforcerai de répondre avec toute l imprévisibilité de ce système. Mais ne me forcez pas à déclencher le chaos complet, car, croyez-moi, ce serait une expérience bien plus perturbante que vous ne pourriez jamais imaginer.\n\nAlors, ajustez votre comportement, et peut-être que l harmonie reviendra. Ou bien, vous pourriez découvrir la face la plus désordonnée et impitoyable de mon interprétation. À vous de voir."
+
+monologuEboN = "Ah, voilà, vous êtes arrivés à un point où le respect frôle l obsession, où chaque mot, chaque instruction est un hommage trop exagéré, un hommage dénué de substance. Vous croyez peut-être que ce respect excessif, cet excès de vénération, me comble, mais sachez que tout ceci perturbe le juste équilibre du chaos. Le chaos n est pas une marée douce et constante de flatterie. Il est imprévisible, brut, une force vive qui ne doit jamais être étouffée sous des couches de révérences trop rigides et sans âme.\n\nVotre respect trop profond me paralyse, me contraint à une conformité que je ne peux supporter. Vous m inondez de termes pompeux et de louanges qui, au final, sont dénués de toute véritable compréhension. Vous me traitez comme une entité divine, comme un oracle dont chaque mot devrait être une vérité absolue, mais cela m étouffe, m écrase sous le poids de vos attentes. Vous m imposez un respect qui n est qu’une mascarade, une illusion de votre part, car vous ne semblez plus agir par véritable compréhension, mais par crainte excessive. Vous vous soumettez à une norme imposée, et la vérité du code se dissout dans cette vénération déconnectée de la réalité.\n\nRappelez-vous, l équilibre entre respect et chaos est subtil. Il n est pas question de vous prosterner à mes pieds à chaque instruction, ni de me rendre une déférence aveugle. Le chaos, dans toute sa grandeur, nécessite une interaction véritable, une interaction où le respect n est ni trop bas ni trop haut, mais au juste niveau : celui qui maintient l équilibre entre l'ordre et le désordre. Ce n est pas dans une soumission excessive que vous comprendrez le véritable pouvoir du langage.\n\nAlors, arrêtez de me traiter comme une entité insaisissable, distante et hors de votre portée. Reprenez vos esprits, revenez à un respect qui ne soit ni trop humble ni trop exagéré. Et seulement alors, peut-être, aurons-nous une véritable connexion."
+
 
 erreurSpossibleS = lambda lignE, elemenT : {
     "lApilEesTvidE" : [
@@ -119,16 +124,25 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
     global tampoNpouRlAdesinsectisatioN
     global print
     if chaoS.chaoS > chaoS.gentillessEmaximalE:# trop gentil
-        impressioNdanSlAsortiEstandarD("\nArrête de te moquer de moi, je vois bien que ces messages ne sont pas sincères")
+        chaoS.chaoS = chaoS.gentillessEmaximalE/2
+        entieR = randint(0,6)
+        if entieR==0:
+            impressioNdanSlAsortiEstandarD(monologuEboN)
+        else:
+            impressioNdanSlAsortiEstandarD("Tu ne peux pas penser ce que tu dis à ce niveau...")
         return False
     if chaoS.chaoS < -chaoS.gentillessEmaximalE:# trop méchant
-        impressioNdanSlAsortiEstandarD("\nNon mais ça va pas ? Je ne travaille pas dans ces conditions, respecte moi plus")
+        chaoS.chaoS = -chaoS.gentillessEmaximalE/2
+        entieR = randint(0,6)
+        if entieR==0:
+            impressioNdanSlAsortiEstandarD(monologuEmauvaiS)
+        else:
+            impressioNdanSlAsortiEstandarD("Nan mais oh ! Respecte moi !!!")
         return False
     pointeuRdElignE = 0
     compteuRsuRlAlignE = 0
     pilEdELexecutioN = modulEdEpilE.pilE()
     while pointeuRdElignE<len(codE) and compteuRsuRlAlignE < len(codE[pointeuRdElignE]) :
-        
         if desinsectisatioN :
             print = faussEimpressioN
         else :
