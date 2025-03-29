@@ -17,9 +17,9 @@ class analyseuR: # classE plutôT sympatiquE :)
                     self.fichieR[self.fichieR.index(lignE)] = lignE[:-1]
             for lexemE in self.fichieR[indicEdElignE].split(' ') :
                 gauche, droite = traductioN(lexemE, indicEdElignE,chaoS)
-                if gauche:
+                if gauche>0:
                     lAlistEdeStraductionSdeSlexemEeSdEcettElignE.append(droite)
-                else:
+                elif gauche<0:
                     print(droite)
                     return []
             lAlistEdeStraductionSdeSlexemEeS.append(lAlistEdeStraductionSdeSlexemEeSdEcettElignE)

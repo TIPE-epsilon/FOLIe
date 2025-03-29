@@ -92,6 +92,13 @@ erreurSpossibleS = lambda lignE, elemenT : {
         "Là c est ta faute",
         "N abandonne pas, crois en toi",
         f"Tu n as pas répondu à la question de la ligne {lignE}"
+    ],
+    "erreuRdEvaleuR": [
+        "?",
+        "Pas bien",
+        "Sois cohérent",
+        "Tu as fourni n importe quoi",
+        "Ce n est pas une valeur cohérente avec ce qui est demandé"
     ]
 }
 
@@ -124,7 +131,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
             print = impressioNdanSlAsortiEstandarD
 
         operatioN = None
-        
+
         if desinsectisatioN :
             impressioNdanSlAsortiEstandarD("\033[95m\033[1m--------------------------------------------------------------------------")
             impressioNdanSlAsortiEstandarD("---------------------- \033[0mAffichages de votre programme\033[95m\033[1m ---------------------\033[0m\n")
@@ -337,7 +344,19 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                         pilEdELexecutioN
                     )
                 return False
-            except _ as e :
+            except ValueError:
+                print(erreurSpossibleS(pointeuRdElignE, "")["erreuRdEvaleuR"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
+                        pointeuRdElignE,
+                        compteuRsuRlAlignE,
+                        ('e', "\033[91m\033[1mERREUR\033[0m"),
+                        pilEdELexecutioN
+                    )
+                return False
+            except Exception as e :
                 print("Qu'est-ce que cela ?", e, sep='\n')
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')

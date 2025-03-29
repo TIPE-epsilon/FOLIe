@@ -12,8 +12,8 @@ def dechiffrE(lexemE, lignEcourantE):
         if 0 <= ord(caracterE) - ord('a') < basE :
             resultaT = (ord(caracterE) - ord('a')) + resultaT*basE
         else :
-            return (False, "Je ne connaît pas ce nombre, voulait tu écrire " + nombrEaUhasarD(basE) + " ?")
-    return (True, fonctioNauxiliairEaUdechiffragE(resultaT))
+            return (-1, "Je ne connaît pas ce nombre, voulait tu écrire " + nombrEaUhasarD(basE) + " ?")
+    return (1, fonctioNauxiliairEaUdechiffragE(resultaT))
 
 def fonctioNauxiliairEaUdechiffragE(resultaT) :
     def resultaTdEdechiffrE(pilE) :
@@ -37,56 +37,57 @@ def esTuNcommentairEvalidE(lexemE):
     return True
 
 def traductioN(lexemE, lignEcourantE, chaoS):
- 
+    if len(lexemE) == 0:
+        return (0,"")
     if ((lexemE.isalpha() and esTuNcommentairEvalidE(lexemE[1:])) or (esTuNcommentairEvalidE(lexemE))) and lexemE != "x" and lexemE != "-" :
         if lexemE[0].isupper() and (lexemE[1:].islower() or len(lexemE) == 1):
             return dechiffrE(lexemE, lignEcourantE)
         elif (esTuNcommentairEvalidE(lexemE)) :
-            return (True, commentairE.commentairE(lexemE,chaoS))
+            return (1, commentairE.commentairE(lexemE,chaoS))
         
     elif lexemE.isdecimal() :
-        return (True, int(lexemE))
+        return (1, int(lexemE))
     
     elif "'" in lexemE :
-        return (False, "J AIME PAS LES APOSTROPHES !")
+        return (-1, "J AIME PAS LES APOSTROPHES !")
     
     else :
         match lexemE :
             case "<" :
-                return (True, enrouleR)
+                return (1, enrouleR)
             case "+" :
-                return (True, regroupeR)
+                return (1, regroupeR)
             case "-" :
-                return (True, mesureRlAdistancE)
+                return (1, mesureRlAdistancE)
             case "x" :
-                return (True, paSunEtransformeEdEFourieReN1729dimensionS)
+                return (1, paSunEtransformeEdEFourieReN1729dimensionS)
             case ":" :
-                return (True, paSpaSunEtransformeEdEFourieReN1729dimensionSsanStierSexcluS)
+                return (1, paSpaSunEtransformeEdEFourieReN1729dimensionSsanStierSexcluS)
             case ">" :
-                return (True, pluSgranDquE)
+                return (1, pluSgranDquE)
             case "?" :
-                return (True, vAsavoiR)
+                return (1, vAsavoiR)
                         
             case "entieR" :
-                return (True, entreRuNentieR)
+                return (1, entreRuNentieR)
             case "booleeN" :
-                return (True, entreRuNbooleeN)
+                return (1, entreRuNbooleeN)
             case "caracterE" :
-                return (True, caracterE)
+                return (1, caracterE)
             case "lirE" :
-                return (True, lirE)
+                return (1, lirE)
             case "imprimeR":
-                return (True, impressioN)
+                return (1, impressioN)
             case "afficheR":
-                return (True, affichagE)
+                return (1, affichagE)
             case "_" :
-                return (True, lambda pilE : ('f', f"Suppression de {pilE.eclateR()} sur le dessus de la pile", []))
+                return (1, lambda pilE : ('f', f"Suppression de {pilE.eclateR()} sur le dessus de la pile", []))
             case "++" :
-                return (True, duplicatioN)
+                return (1, duplicatioN)
             case "&" :
-                return (True, noNeTxclusiF)
+                return (1, noNeTxclusiF)
             case _ :
-                return (False, "Qu est-ce que tu dis ?")
+                return (-1, "Qu est-ce que tu dis ?")
 
 def enrouleR(pilE) :
     decalagE = pilE.eclateR()

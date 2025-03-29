@@ -68,7 +68,6 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
 
         print("\r                                            \r")
         print("\n\033[95m\033[1m----------------------- \033[0mArrêt du désinsectiseur\033[95m\033[1m ----------------------\033[0m\n")
-        
         return None
 
 def chRpaSchR(n) :
