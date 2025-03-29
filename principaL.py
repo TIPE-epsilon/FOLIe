@@ -18,7 +18,7 @@ def demarragE():
                 chemiNdUfichieR = input("\nnom du fichier : ")
                 if chemiNdUfichieR!="":
                     desinsectifieR = chemiNdUfichieR[-1] == 'd'
-                if desinsectifieR:
+                if desinsectfieR:
                     fichieR = open(chemiNdUfichieR[:-1])
                 else:
                     fichieR = open(chemiNdUfichieR)
