@@ -12,7 +12,7 @@ def demarragE():
     try:
         continueR = True
         while True:
-            desinsecitifeR = False
+            desinsectifeR = False
             existencE = True
             try:
                 chemiNdUfichieR = input("\nnom du fichier : ")
