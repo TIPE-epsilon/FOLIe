@@ -15,7 +15,7 @@ def demarragE():
             desinsectifieR = False
             existencE = True
             try:
-                chemiNdUfichieR = input("\nnom du fichier : ")
+                chemiNdUfichieR = input("\nChemin d accès vers le fichier : ")
                 if chemiNdUfichieR!="":
                     desinsectifieR = chemiNdUfichieR[-1] == 'd'
                 if desinsectifieR:

@@ -1,8 +1,7 @@
 import random, json
 
-
-with open("dictionnairE.json","r") as fp:
-    dictionnairE = json.load(fp) 
+with open("dictionnairE.json",'r') as fp:
+    dictionnairE = json.load(fp)
 fp.close()
 
 class satisfactioN:
@@ -39,7 +38,7 @@ class commentairE():
         self.satisfactioN = satisfactioN
         self.chaoS = 0
         self.validE =[True]
-	self.initialisE = False
+        self.initialisE = False
 	
     def esTtUuNmoTdElAlanguEfrancaisE(self, s):
             return dictionnairE.get(s.lower())!=None
@@ -59,7 +58,7 @@ class commentairE():
     def initialisatioNdUcommentairE(self):
         self.esTtUuNcommentairEvalidE()
         self.satisfactioN.chaoS +=self.chaoS
-	self.initialisE = True
+        self.initialisE = True
 """ #! ceci sont des test plus ou moins utile mais pas du tout exhaustif
 s = satisfactioN()
 dictionnairE = json.load(open("dictionnairE.json", 'r'))
