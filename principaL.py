@@ -16,14 +16,23 @@ def demarragE():
             existencE = True
             try:
                 chemiNdUfichieR = input("\nChemin d accès vers le fichier : ")
-                if chemiNdUfichieR!="":
+                if len(chemiNdUfichieR)>=3:
                     desinsectifieR = chemiNdUfichieR[-1] == 'd'
-                if desinsectifieR:
-                    fichieR = open(chemiNdUfichieR[:-1])
+                    if desinsectifieR:
+                        chemiNdUfichieR = chemiNdUfichieR[:-1]
+                        if chemiNdUfichieR[-3:] == "...":
+                            fichieR = open(chemiNdUfichieR)
+                        else:
+                            raise FileNotFoundError
+                    else:
+                        if chemiNdUfichieR[-3:] == "...":
+                            fichieR = open(chemiNdUfichieR)
+                        else:
+                            raise FileNotFoundError
                 else:
-                    fichieR = open(chemiNdUfichieR)
+                    raise FileNotFoundError
             except FileNotFoundError:
-                print("Ce chemin de fichier n existe pas, réessayez:")
+                print("Ce chemin de fichier n existe pas ou ne correspond pas à un fichier valide,\n réessayez:")
                 existencE = False
             if existencE:
                 ligneS = [x for x in fichieR.readlines() if x != '\n']
