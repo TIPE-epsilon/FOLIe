@@ -1,6 +1,8 @@
 import random, json
-import dictionnairE
-dictionnairE = dictionnairE.dictionnairE
+
+with open("dictionnairE.json",'r') as fp:
+    dictionnairE = json.load(fp)
+fp.close()
 
 class satisfactioN:
     def __init__(self):
