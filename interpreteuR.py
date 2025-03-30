@@ -122,6 +122,7 @@ def faussEimpressioN(*args, sep=' ', end='\n'):
 
 def interpreteR(codE, chaoS, desinsectisatioN=None):
     global tampoNpouRlAdesinsectisatioN
+    tampoNpouRlAdesinsectisatioN = ""
     global print
     if chaoS.chaoS > chaoS.gentillessEmaximalE:# trop gentil
         chaoS.chaoS = chaoS.gentillessEmaximalE/2
