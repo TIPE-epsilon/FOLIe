@@ -236,7 +236,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
         else :
             try :
                 operatioN = unitEdEcodE(pilEdELexecutioN)
-            except TypeError :
+            except TypeError:
                 print(erreurSpossibleS(pointeuRdElignE, unitEdEcodE)["erreuRdEtypE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
@@ -249,6 +249,19 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                     )
                 chaoS.chaoS-=1
                 return False
+            except AttributeError :
+                print(erreurSpossibleS(pointeuRdElignE, unitEdEcodE)["erreuRdEtypE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                if desinsectisatioN :
+                    impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
+                    desinsectisatioN = desinsectiseR(
+                        desinsectisatioN,
+                        pointeuRdElignE,
+                        compteuRsuRlAlignE,
+                        ('e', "\033[91m\033[1mERREUR\033[0m"),
+                        pilEdELexecutioN
+                    )
+                chaoS.chaoS-=1
+                return False     
             except IndexError :
                 print(erreurSpossibleS(pointeuRdElignE, f"appliquer la fonction {unitEdEcodE}")["lApilEesTvidE"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 if desinsectisatioN :
@@ -393,7 +406,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                 chaoS.chaoS-=1
                 return False
             except Exception as e :
-                print("Qu'est-ce que cela ?", e, sep='\n')
+                print("Qu est-ce que cela ?", e, sep='\n')
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
                     desinsectisatioN = desinsectiseR(
