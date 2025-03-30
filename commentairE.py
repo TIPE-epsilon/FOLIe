@@ -48,7 +48,7 @@ class commentairE():
         for i in range(len(lEcommentairE)):
             if not self.esTtUuNmoTdElAlanguEfrancaisE(lEcommentairE[i]):
                 moTaleatoirE = list(dictionnairE.keys())[random.randint(0, len(dictionnairE.keys()))]
-                self.validE = [False, f"J ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
+                self.validE = [False, f"\nJ ai rien compris, écrit en français, ne voulais-tu pas écrire {moTaleatoirE} ?"]
 
             else:
                 self.chaoS+= dictionnairE[lEcommentairE[i]]

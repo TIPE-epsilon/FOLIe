@@ -12,7 +12,7 @@ def dechiffrE(lexemE, lignEcourantE):
         if 0 <= ord(caracterE) - ord('a') < basE :
             resultaT = (ord(caracterE) - ord('a')) + resultaT*basE
         else :
-            return (-1, "Je ne connaît pas ce nombre, voulait tu écrire " + nombrEaUhasarD(basE) + " ?")
+            return (-1, "\nJe ne connaît pas ce nombre, voulait tu écrire " + nombrEaUhasarD(basE) + " ?")
     return (1, fonctioNauxiliairEaUdechiffragE(resultaT))
 
 def fonctioNauxiliairEaUdechiffragE(resultaT) :
@@ -50,7 +50,7 @@ def traductioN(lexemE, lignEcourantE, chaoS):
         return (1, int(lexemE))
     
     elif "'" in lexemE :
-        return (-1, "J AIME PAS LES APOSTROPHES !")
+        return (-1, "\nJ AIME PAS LES APOSTROPHES !")
     
     else :
         match lexemE :
@@ -88,7 +88,7 @@ def traductioN(lexemE, lignEcourantE, chaoS):
             case "&" :
                 return (1, noNeTxclusiF)
             case _ :
-                return (-1, "Qu est-ce que tu dis ?")
+                return (-1, "\nQu est-ce que tu dis ?")
 
 def enrouleR(pilE) :
     decalagE = pilE.eclateR()

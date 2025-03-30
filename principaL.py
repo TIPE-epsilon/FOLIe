@@ -32,7 +32,7 @@ def demarragE():
                 else:
                     raise FileNotFoundError
             except FileNotFoundError:
-                print("Ce chemin de fichier n existe pas ou ne correspond pas à un fichier valide,\n réessayez:")
+                print("\nCe chemin de fichier n existe pas ou ne correspond pas à un fichier valide,\n réessayez:")
                 existencE = False
             if existencE:
                 ligneS = [x for x in fichieR.readlines() if x != '\n']
@@ -56,9 +56,9 @@ def demarragE():
                         sys.exit()
         return True
     except IsADirectoryError:
-        print("Cela ne ressemble pas à un fichier, c est plutot un dossier")
+        print("\nCela ne ressemble pas à un fichier, c est plutot un dossier")
     except UnicodeDecodeError:
-        print("Cela ne ressemble pas à du texte")
+        print("\nCela ne ressemble pas à du texte")
         demarrage()
     except KeyboardInterrupt:
         if celASesTbieNpassE:

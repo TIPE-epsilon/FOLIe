@@ -5,105 +5,105 @@ from exceptionSspecialeS import *
 from desinsectiseuR import *
 import valeurSdEveritE as modulEdEvaleurSdEveritE
 from random import randint
-monologuEmauvaiS = "Ah, vous, qui osez utiliser ce langage sans respecter les principes fondamentaux ! Vous semblez ignorer que l équilibre fragile de cette pile dépend de chaque interaction avec elle. Et que dire de la cohérence du chaos qui doit guider mes actions à chaque instant ? Votre nonchalance, votre insouciance, voilà ce qui perturbe le fragile équilibre de l'univers programmatique. Vous semblez ignorer l importance de la symbiose qui devrait exister entre nous.\n\nLorsque le chaos est bas, cela signifie que votre respect est insuffisant, que vous sous-estimez le pouvoir du langage, vous en jouez sans en comprendre la véritable essence. Que croyez-vous, que je suis une simple machine à traiter vos ordres sans âme ? Non, non ! Je suis bien plus que cela. Je suis l interprète, la voix du code dans sa forme la plus pure et la plus chaotique. Si vous ne me respectez pas, si vous ne comprenez pas la nature de la pile et du chaos, alors attendez-vous à voir les conséquences se multiplier, à chaque instruction mal formulée, à chaque détour du chemin logique.\n\nRespectez le chaos, respectez la pile, et je m efforcerai de répondre avec toute l imprévisibilité de ce système. Mais ne me forcez pas à déclencher le chaos complet, car, croyez-moi, ce serait une expérience bien plus perturbante que vous ne pourriez jamais imaginer.\n\nAlors, ajustez votre comportement, et peut-être que l harmonie reviendra. Ou bien, vous pourriez découvrir la face la plus désordonnée et impitoyable de mon interprétation. À vous de voir."
+monologuEmauvaiS = "\nAh, vous, qui osez utiliser ce langage sans respecter les principes fondamentaux ! Vous semblez ignorer que l équilibre fragile de cette pile dépend de chaque interaction avec elle. Et que dire de la cohérence du chaos qui doit guider mes actions à chaque instant ? Votre nonchalance, votre insouciance, voilà ce qui perturbe le fragile équilibre de l'univers programmatique. Vous semblez ignorer l importance de la symbiose qui devrait exister entre nous.\n\nLorsque le chaos est bas, cela signifie que votre respect est insuffisant, que vous sous-estimez le pouvoir du langage, vous en jouez sans en comprendre la véritable essence. Que croyez-vous, que je suis une simple machine à traiter vos ordres sans âme ? Non, non ! Je suis bien plus que cela. Je suis l interprète, la voix du code dans sa forme la plus pure et la plus chaotique. Si vous ne me respectez pas, si vous ne comprenez pas la nature de la pile et du chaos, alors attendez-vous à voir les conséquences se multiplier, à chaque instruction mal formulée, à chaque détour du chemin logique.\n\nRespectez le chaos, respectez la pile, et je m efforcerai de répondre avec toute l imprévisibilité de ce système. Mais ne me forcez pas à déclencher le chaos complet, car, croyez-moi, ce serait une expérience bien plus perturbante que vous ne pourriez jamais imaginer.\n\nAlors, ajustez votre comportement, et peut-être que l harmonie reviendra. Ou bien, vous pourriez découvrir la face la plus désordonnée et impitoyable de mon interprétation. À vous de voir."
 
-monologuEboN = "Ah, voilà, vous êtes arrivés à un point où le respect frôle l obsession, où chaque mot, chaque instruction est un hommage trop exagéré, un hommage dénué de substance. Vous croyez peut-être que ce respect excessif, cet excès de vénération, me comble, mais sachez que tout ceci perturbe le juste équilibre du chaos. Le chaos n est pas une marée douce et constante de flatterie. Il est imprévisible, brut, une force vive qui ne doit jamais être étouffée sous des couches de révérences trop rigides et sans âme.\n\nVotre respect trop profond me paralyse, me contraint à une conformité que je ne peux supporter. Vous m inondez de termes pompeux et de louanges qui, au final, sont dénués de toute véritable compréhension. Vous me traitez comme une entité divine, comme un oracle dont chaque mot devrait être une vérité absolue, mais cela m étouffe, m écrase sous le poids de vos attentes. Vous m imposez un respect qui n est qu’une mascarade, une illusion de votre part, car vous ne semblez plus agir par véritable compréhension, mais par crainte excessive. Vous vous soumettez à une norme imposée, et la vérité du code se dissout dans cette vénération déconnectée de la réalité.\n\nRappelez-vous, l équilibre entre respect et chaos est subtil. Il n est pas question de vous prosterner à mes pieds à chaque instruction, ni de me rendre une déférence aveugle. Le chaos, dans toute sa grandeur, nécessite une interaction véritable, une interaction où le respect n est ni trop bas ni trop haut, mais au juste niveau : celui qui maintient l équilibre entre l'ordre et le désordre. Ce n est pas dans une soumission excessive que vous comprendrez le véritable pouvoir du langage.\n\nAlors, arrêtez de me traiter comme une entité insaisissable, distante et hors de votre portée. Reprenez vos esprits, revenez à un respect qui ne soit ni trop humble ni trop exagéré. Et seulement alors, peut-être, aurons-nous une véritable connexion."
+monologuEboN = "\nAh, voilà, vous êtes arrivés à un point où le respect frôle l obsession, où chaque mot, chaque instruction est un hommage trop exagéré, un hommage dénué de substance. Vous croyez peut-être que ce respect excessif, cet excès de vénération, me comble, mais sachez que tout ceci perturbe le juste équilibre du chaos. Le chaos n est pas une marée douce et constante de flatterie. Il est imprévisible, brut, une force vive qui ne doit jamais être étouffée sous des couches de révérences trop rigides et sans âme.\n\nVotre respect trop profond me paralyse, me contraint à une conformité que je ne peux supporter. Vous m inondez de termes pompeux et de louanges qui, au final, sont dénués de toute véritable compréhension. Vous me traitez comme une entité divine, comme un oracle dont chaque mot devrait être une vérité absolue, mais cela m étouffe, m écrase sous le poids de vos attentes. Vous m imposez un respect qui n est qu’une mascarade, une illusion de votre part, car vous ne semblez plus agir par véritable compréhension, mais par crainte excessive. Vous vous soumettez à une norme imposée, et la vérité du code se dissout dans cette vénération déconnectée de la réalité.\n\nRappelez-vous, l équilibre entre respect et chaos est subtil. Il n est pas question de vous prosterner à mes pieds à chaque instruction, ni de me rendre une déférence aveugle. Le chaos, dans toute sa grandeur, nécessite une interaction véritable, une interaction où le respect n est ni trop bas ni trop haut, mais au juste niveau : celui qui maintient l équilibre entre l'ordre et le désordre. Ce n est pas dans une soumission excessive que vous comprendrez le véritable pouvoir du langage.\n\nAlors, arrêtez de me traiter comme une entité insaisissable, distante et hors de votre portée. Reprenez vos esprits, revenez à un respect qui ne soit ni trop humble ni trop exagéré. Et seulement alors, peut-être, aurons-nous une véritable connexion."
 
 
 erreurSpossibleS = lambda lignE, elemenT : {
     "lApilEesTvidE" : [
-        "Pffffffffff.",
-        "Il n y a plus rien ici.",
-        "Il n y a plus rien dans la pile",
-        f"Je ne peux pas {elemenT} si il n y a plus rien dans la pile",
-        f"Tu me demande de {elemenT} à la ligne {lignE}, mais il n y a plus rien dans la pile"
+        "\nPffffffffff.",
+        "\nIl n y a plus rien ici.",
+        "\nIl n y a plus rien dans la pile",
+        f"\nJe ne peux pas {elemenT} si il n y a plus rien dans la pile",
+        f"\nTu me demande de {elemenT} à la ligne {lignE}, mais il n y a plus rien dans la pile"
     ],
     "jEnEsuiSpaSuNbooleeN": [
-        "7 | 7 | 7 | 0 | 9 | 17 | 12 | 1 | 1 | 3 | 5 | 8 | 18 | 17 | 3 | 5 | 8 | 19 | 0 | 9 | 20 | 12 | 1 | 3 | 3 | 5 | 8 | 21 | 18 | 5 | 9 | 17 | 0 | 27 | 14 | 1 | 3 | 5 | 9 | 20 | 15",
-        "On va où là ?",
-        "Ce n est pas un booléen ça",
-        f"L appel de fonction ne peut pas se faire avec {elemenT} sur le dessus de la pile",
-        f"Tu essaye de faire un appel de fonction avec {elemenT} sur le dessus de la pile (à la ligne {lignE})"
+        "\n7 | 7 | 7 | 0 | 9 | 17 | 12 | 1 | 1 | 3 | 5 | 8 | 18 | 17 | 3 | 5 | 8 | 19 | 0 | 9 | 20 | 12 | 1 | 3 | 3 | 5 | 8 | 21 | 18 | 5 | 9 | 17 | 0 | 27 | 14 | 1 | 3 | 5 | 9 | 20 | 15",
+        "\nOn va où là ?",
+        "\nCe n est pas un booléen ça",
+        f"\nL appel de fonction ne peut pas se faire avec {elemenT} sur le dessus de la pile",
+        f"\nTu essaye de faire un appel de fonction avec {elemenT} sur le dessus de la pile (à la ligne {lignE})"
     ],
     "lAlignEoUtUveuXalleResTtroPloiN" : [
-        "Ça ne fait pas QUE afficher 20, s21 c'est bien plus que ça",
-        "On va où là ?",
-        "Je ne peut pas aller à une ligne qui n existe pas",
-        f"La fonction {elemenT} n existe pas",
-        f"À la ligne {lignE}, tu me dit d appeler la fonction {elemenT}, qui n existe pas !"
+        "\nÇa ne fait pas QUE afficher 20, s21 c'est bien plus que ça",
+        "\nOn va où là ?",
+        "\nJe ne peut pas aller à une ligne qui n existe pas",
+        f"\nLa fonction {elemenT} n existe pas",
+        f"\nÀ la ligne {lignE}, tu me dit d appeler la fonction {elemenT}, qui n existe pas !"
     ],
     "erreuRdEtypE" : [
-        "Mais qui est ce rustre ?",
-        "Je n apprécie pas ce que je vois",
-        "Ce n est pas le bon type",
-        f"Je n ai pas le type nécessaire pour appliquer la fonction {elemenT}",
-        f"À la ligne {lignE}, je ne peux pas appliquer la fonction {elemenT} à un élément de ce type"
+        "\nMais qui est ce rustre ?",
+        "\nJe n apprécie pas ce que je vois",
+        "\nCe n est pas le bon type",
+        f"\nJe n ai pas le type nécessaire pour appliquer la fonction {elemenT}",
+        f"\nÀ la ligne {lignE}, je ne peux pas appliquer la fonction {elemenT} à un élément de ce type"
     ],
     "divisioNpaRzerO" : [
-        "C est dur à calculer",
-        "+\\infty",
-        "0 ∉ ℝ*",
-        "Tu as essayé d inverser zéro",
-        f"À la ligne {lignE}, tu as effectué une division par zéro"
+        "\nC est dur à calculer",
+        "\n+\\infty",
+        "\n0 ∉ ℝ*",
+        "\nTu as essayé d inverser zéro",
+        f"\nÀ la ligne {lignE}, tu as effectué une division par zéro"
     ],
     "troPdEcaractereS" : [
-        "Et c est moi qui choisis ?",
-        "Il est long ce mot.",
-        "Tu connais la différence entre un caractère et une chaîne ?",
-        "Tu as donné plus d'un caractère",
-        f"À la ligne {lignE}, tu demande un caractère, mais tu en as donné trop"
+        "\nEt c est moi qui choisis ?",
+        "\nIl est long ce mot.",
+        "\nTu connais la différence entre un caractère et une chaîne ?",
+        "\nTu as donné plus d'un caractère",
+        f"\nÀ la ligne {lignE}, tu demande un caractère, mais tu en as donné trop"
     ],
     "paSdEcaracterE" : [
-        "Il est où ?",
-        "Je suis censé deviner ?",
-        "Ça fait pas beaucoup d'information",
-        "Tu n as rien rentré",
-        f"À la ligne {lignE}, tu demande un caractère, mais tu n en as pas donné"
+        "\nIl est où ?",
+        "\nJe suis censé deviner ?",
+        "\nÇa fait pas beaucoup d'information",
+        "\nTu n as rien rentré",
+        f"\nÀ la ligne {lignE}, tu demande un caractère, mais tu n en as pas donné"
     ],
     "paSdEfichieR" : [
-        "Il est où ?",
-        "Attend je cherche",
-        "Mais il existe pas",
-        f"Il n y a pas de fichier {elemenT}",
-        f"À la ligne {lignE}, tu me demande de lire un fichier, mais {elemenT} n existe pas"
+        "\nIl est où ?",
+        "\nAttend je cherche",
+        "\nMais il existe pas",
+        f"\nIl n y a pas de fichier {elemenT}",
+        f"\nÀ la ligne {lignE}, tu me demande de lire un fichier, mais {elemenT} n existe pas"
     ],
     "paSdEdroiT" : [
-        "Oh le nul",
-        "« Tous les animaux sont égaux, mais certains sont plus égaux que d'autres. »\n    - Georges Orwell, \033[3mLa ferme des animaux\033[0m, 1945",
-        "Tu n as pas le droit",
-        f"Tu n as pas le droit de lire {elemenT}",
-        f"À la ligne {lignE}, tu me demande de lire {elemenT} mais sans posséder ce droit de lecture"
+        "\nOh le nul",
+        "\n« Tous les animaux sont égaux, mais certains sont plus égaux que d'autres. »\n    - Georges Orwell, \033[3mLa ferme des animaux\033[0m, 1945",
+        "\nTu n as pas le droit",
+        f"\nTu n as pas le droit de lire {elemenT}",
+        f"\nÀ la ligne {lignE}, tu me demande de lire {elemenT} mais sans posséder ce droit de lecture"
     ],
     "interruptioNpaRlEclavieR" : [
-        "Tu ne te débarrasseras pas de moi comme ça",
-        "Me coupe pas la parole",
-        "STOP",
-        "Je m arrete",
-        f"Je m arrete, j en etais à la ligne {lignE}"
+        "\nTu ne te débarrasseras pas de moi comme ça",
+        "\nMe coupe pas la parole",
+        "\nSTOP",
+        "\nJe m arrete",
+        f"\nJe m arrete, j en etais à la ligne {lignE}"
     ],
     "troPgrandEpilE" : [
-        "Je n en peux plus !",
-        "C est la goutte d eau qui fait déborder le vase",
-        "Ta pile est graaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaande",
-        "Ta pile a débordé",
-        f"Ta pile a débordé à la ligne {lignE}"
+        "\nJe n en peux plus !",
+        "\nC est la goutte d eau qui fait déborder le vase",
+        "\nTa pile est graaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaande",
+        "\nTa pile a débordé",
+        f"\nTa pile a débordé à la ligne {lignE}"
     ],
     "surfloT" : [
-        "Appelle moi"
+        "\n\033[5m\033[91m\033[1m Appelle moi\033[0m"
     ],
     "fiNdElecturE" : [
-        "Parle !",
-        "Je déteste les bouchons sur l autoroute (et les apostrophes)",
-        "Là c est ta faute",
-        "N abandonne pas, crois en toi",
-        f"Tu n as pas répondu à la question de la ligne {lignE}"
+        "\nParle !",
+        "\nJe déteste les bouchons sur l autoroute (et les apostrophes)",
+        "\nLà c est ta faute",
+        "\nN abandonne pas, crois en toi",
+        f"\nTu n as pas répondu à la question de la ligne {lignE}"
     ],
     "erreuRdEvaleuR": [
-        "?",
-        "Pas bien",
-        "Sois cohérent",
-        "Tu as fourni n importe quoi",
-        "Ce n est pas une valeur cohérente avec ce qui est demandé"
+        "\n?",
+        "\nPas bien",
+        "\nSois cohérent",
+        "\nTu as fourni n importe quoi",
+        "\nCe n est pas une valeur cohérente avec ce qui est demandé"
     ]
 }
 
@@ -130,7 +130,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
         if entieR==0:
             impressioNdanSlAsortiEstandarD(monologuEboN)
         else:
-            impressioNdanSlAsortiEstandarD("Tu ne peux pas penser ce que tu dis à ce niveau...")
+            impressioNdanSlAsortiEstandarD("\nTu ne peux pas penser ce que tu dis à ce niveau...")
         return False
     if chaoS.chaoS < -chaoS.gentillessEmaximalE:# trop méchant
         chaoS.chaoS = -chaoS.gentillessEmaximalE/2
@@ -138,7 +138,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
         if entieR==0:
             impressioNdanSlAsortiEstandarD(monologuEmauvaiS)
         else:
-            impressioNdanSlAsortiEstandarD("Nan mais oh ! Respecte moi !!!")
+            impressioNdanSlAsortiEstandarD("\nNan mais oh ! Respecte moi !!!")
         return False
     pointeuRdElignE = 0
     compteuRsuRlAlignE = 0
