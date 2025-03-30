@@ -44,7 +44,6 @@ def traductioN(lexemE, lignEcourantE, chaoS):
             return dechiffrE(lexemE, lignEcourantE)
         elif (esTuNcommentairEvalidE(lexemE)) :
             commentairEeNquestioN =  commentairE.commentairE(lexemE,chaoS)
-            commentairEeNquestioN.initialisatioNdUcommentairE()
             return (1,commentairEeNquestioN)
         
     elif lexemE.isdecimal() :

@@ -214,6 +214,8 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
                 
                 
         elif type(unitEdEcodE) == commentairE :
+            if not unitEdEcodE.initialisE:
+                unitEdEcodE.initialisatioNdUcommentairE()
             resultaTdElAmisEAjouRdUchaoS = unitEdEcodE.validE
             operatioN = ('c', unitEdEcodE)
             if not resultaTdElAmisEAjouRdUchaoS[0] :
