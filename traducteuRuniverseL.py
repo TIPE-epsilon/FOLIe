@@ -95,7 +95,7 @@ def enrouleR(pilE) :
     decalagE = pilE.eclateR()
     hauT = pilE.revienT[-1]
     pilE.enrouleR(decalagE)
-    return ('f', f"Repousse de l'élément {hauT} de {decalagE} rangs", [decalagE])
+    return ('f', f"Repousse de l'élément {hauT} de {decalagE} rangs", [-decalagE-1])
 
 def regroupeR(pilE) :
     deuX = pilE.eclateR()
