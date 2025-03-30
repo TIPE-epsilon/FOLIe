@@ -26,7 +26,7 @@ def desinsectiseR(codEcrU, lignE, colonnE, operatioN, pilE) :
             case ('r', chainE) :
                 print(chainE)
             case x :
-                print("Je n'ai pas prévu ça", x)
+                print("Je n ai pas prévu ça", x)
                 assert false
 
         print("\n\033[4mCode :\033[0m\n")

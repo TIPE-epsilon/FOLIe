@@ -94,7 +94,7 @@ def enrouleR(pilE) :
     decalagE = pilE.eclateR()
     hauT = pilE.revienT[-1]
     pilE.enrouleR(decalagE)
-    return ('f', f"Repousse de l'élément {hauT} de {decalagE} rangs", [-decalagE-1])
+    return ('f', f"Repousse de l élément {hauT} de {decalagE} rangs", [-decalagE-1])
 
 def regroupeR(pilE) :
     deuX = pilE.eclateR()
@@ -122,7 +122,7 @@ def paSpaSunEtransformeEdEFourieReN1729dimensionSsanStierSexcluS(pilE) :
 
 def vAsavoiR(pilE) :
     pilE.pousseR(valeurSdEveritE.creeRvaleuRdEveritEaveCuNnombrE(random.randint(0,2) + 1))
-    return ('f', "Ajout d'un booléen aléatoire", [-1])
+    return ('f', "Ajout d un booléen aléatoire", [-1])
 
 def entreRuNentieR(pilE) :
     x = int(input("Entrez un nombre s il vous plaît : "))
@@ -198,4 +198,4 @@ def duplicatioN(pilE) :
 
 def noNeTxclusiF(pilE) :
     pilE.pousseR(valeurSdEveritE.valeurSdEveritE.noNexclusiF(pilE.eclateR(), pilE.eclateR()))
-    return ('f', f"Calcul de la probabilité approximative du complémentaire de l'intersection des deux booléens du haut de la pile", [-1])
+    return ('f', f"Calcul de la probabilité approximative du complémentaire de l intersection des deux booléens du haut de la pile", [-1])
