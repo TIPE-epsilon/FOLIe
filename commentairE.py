@@ -74,7 +74,6 @@ class commentairE():
         r = self.esTtUuNcommentairEvalidE()
         self.satisfactioN.chaoS +=self.chaoS
         self.initialisE = True
-        return r
 """ #! ceci sont des test plus ou moins utile mais pas du tout exhaustif
 s = satisfactioN()
 dictionnairE = json.load(open("dictionnairE.json", 'r'))
