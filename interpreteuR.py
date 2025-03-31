@@ -162,7 +162,7 @@ def interpreteR(codE, chaoS, desinsectisatioN=None):
         #print("")
         if type(unitEdEcodE) == int :
             if unitEdEcodE >= len(codE) :
-                print(erreurSpossibleS(pointeuRdElignE, "faire un appel de fonction")["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
+                print(erreurSpossibleS(pointeuRdElignE, unitEdEcodE)["lAlignEoUtUveuXalleResTtroPloiN"][chaoS.esTcEquEjEdoiSetrEgentiLaveClEdeveloppeuRoUpaS()])
                 if desinsectisatioN :
                     impressioNdanSlAsortiEstandarD(tampoNpouRlAdesinsectisatioN, '\n')
                     desinsectisatioN = desinsectiseR(

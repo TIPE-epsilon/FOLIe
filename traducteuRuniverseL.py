@@ -129,7 +129,7 @@ def entreRuNentieR(pilE) :
     pilE.pousseR(x)
     return ('f', f"Ajout sur la pile de {x}", [-1])
             
-def entreRuNbooleeN() :
+def entreRuNbooleeN(pilE) :
     instanTinitiaL = int(time.clock_gettime(time.CLOCK_REALTIME))
     input("Appuyez sur 'Entrée' s il vous plaît")
     dureE = int(time.clock_gettime(time.CLOCK_REALTIME)) - instanTinitiaL
