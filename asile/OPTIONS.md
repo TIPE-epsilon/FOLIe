@@ -23,6 +23,8 @@ $ asile -o my_exec example...
 ## List of options
 Here is a list of options. Options not implemented yet are marked by a *TODO*.
 
+| Option | Description |
+| --- | --- |
 | `-h` | Print an help (usage and list of options) and exit, ignoring all other options or files |
 | `-v` | Print a version number which has not much meaning, then exit. Ignore all other options or files, except the `-h` option |
 | `-o` | Take one parameter. Write the output using its parameter as file name instead of `a.out` |
