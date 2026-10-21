@@ -28,7 +28,7 @@ $(mdir)/%.d: %.c | $(mdir)
 
 # Rule for object files, prerequisites are included via the precedent rule
 %.o: | $(odir)
-	gcc -c -o $(odir)/$@ \$< -I $(hdir) @GCC_FLAGS
+	gcc -c -o $(odir)/$@ $< -I $(hdir) @GCC_FLAGS
 
 clean :
 	rm -f asile
