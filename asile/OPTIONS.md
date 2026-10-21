@@ -25,8 +25,8 @@ Here is a list of options. Options not implemented yet are marked by a *TODO*.
 
 | Option | Description |
 | --- | --- |
-| `-h` | Print an help (usage and list of options) and exit, ignoring all other options or files |
-| `-v` | Print a version number which has not much meaning, then exit. Ignore all other options or files, except the `-h` option |
-| `-o` | Take one parameter. Write the output using its parameter as file name instead of `a.out` |
-| `-k` | Use the name of the input without extension as output file name instead of `a.out`. This option is ignored if the `-o` option is set |
-| `-d` *TODO* | Create a debugger running the programm instead of an actual executable. If the `-k` option is set, append the extension `.debug` to the output file name. It is still a classic ELF file that can be executed like the usual output. For more info, try it. |
+| `-h` | Show an help (usage and list of options) and exit, ignoring all other options or files. |
+| `-v` | Print a version number which has not much meaning, then exit. Ignore all other options or files except `-h`. |
+| `-o` | Take one parameter and use it as name for the output, instead of `a.out`. |
+| `-k` | Use the name of the input file without extension as name for the output. This option is ignored if `-o` is in use |
+| `-d` *TODO* | Create a debugger running the programm instead of a simple compiled version of it. It is still an ELF file which can be run as usual. If `-k` option is in use, append the extension `.debug` to the output name. |
