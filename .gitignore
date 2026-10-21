@@ -1,17 +1,6 @@
-.vscode
-main^C
-main
-exe
+# Asile build directories and executable
 
-__pycache__
-*.pyc
-# Compiled source #
-###################
-*.dic
-*.exe
-*.com
-*.class
-*.dll
-*.o
-*.so
-vgcore.*
+asile/makefiles
+asile/build
+asile/tests/temp
+asile/asile
