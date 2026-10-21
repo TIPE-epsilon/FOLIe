@@ -38,30 +38,21 @@ int main(int argc, char** argv) {
   char opt;
   while ((opt = getopt(argc, argv, ":dhko:v")) != -1)
     switch (opt) {
-    case 100:
-      flags |= DFLAG;
-      break;
-    case 104:
-      help();
-      break;
-    case 107:
-      if (!(flags & OFLAG)) output = NULL;
-      break;
-    case 111:
-      output = optarg;
-      flags |= OFLAG;
-      break;
-    case 118:
-      flags |= VFLAG;
-      break;
+    case 100: flags |= DFLAG; break;
+    case 104: help(); break;
+    case 107: if (!(flags & OFLAG)) output = NULL; break;
+    case 111: output = optarg; flags |= OFLAG; break;
+    case 118: flags |= VFLAG; break;
     case 58:
-      printf("Error: Option -%c expect an argument\n", optopt);
+      fprintf(stderr, "Error: Option -%c expect an argument\n", optopt);
       exit(1);
     case 63:
-      printf("Error: Unknown option -%c\n", optopt);
+      fprintf(stderr, "Error: Unknown option -%c\n", optopt);
+      exit(1);
+    default:
+      fprintf(stderr, "Error: Unreachable code reached\n");
       exit(1);
     }
-
   if (flags & VFLAG) version();
 
   char* input_file;
