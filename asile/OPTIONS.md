@@ -30,4 +30,3 @@ Here is a list of options. Options not implemented yet are marked by a *TODO*.
 | `-o` | Take one parameter. Write the output using its parameter as file name instead of `a.out` |
 | `-k` | Use the name of the input without extension as output file name instead of `a.out`. This option is ignored if the `-o` option is set |
 | `-d` *TODO* | Create a debugger running the programm instead of an actual executable. If the `-k` option is set, append the extension `.debug` to the output file name. It is still a classic ELF file that can be executed like the usual output. For more info, try it. |
-

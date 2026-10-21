@@ -74,4 +74,3 @@ TODO:
 .IGNORE : clean $(add_prefix $(tdir)/$(tmpdir)/,$(tests))
 .SILENT : test $(addprefix $(mdir)/,$(mkfiles)) \
 	$(add_prefix $(tdir)/$(tmpdir)/,$(tests)) TODO
-
