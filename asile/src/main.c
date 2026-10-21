@@ -7,16 +7,17 @@
 void help() {
   printf("Usage: asile [options] <file> [options]\n"
          "Options:\n"
-         "  -h    Show this help and exit, ignoring all other options.\n"
+         "  -h    Show this help and exit, ignoring all other options or"
+	 "files.\n"
          "  -v    Print a version number which has not much meaning, then "
-         "exit. Ignore all\n        other options except `-h`.\n"
+         "exit. Ignore all\n        other options or files except `-h`.\n"
          "  -o    Take one parameter and use it as name for the output, instead"
          " of `a.out`.\n"
          "  -k    Use the name of the input file without extension as name for "
          "the output.\n        This option is ignored if `-o` is in use.\n"
          "  -d    Create a debugger running the programm instead of a simple "
          "compiled\n        version of it. It is still an ELF file which can be"
-         " run as usual. If the\n        `-k` is in use, append the extension "
+         " run as usual. If\n        `-k` is in use, append the extension "
          "`.debug` to the output name. For\n        more info, try it.\n"
          "\n"
          "Source of this debugger available at\n"
@@ -27,6 +28,8 @@ void help() {
 void version() {
   printf("0.0.0\n");
 }
+
+void empty() {}
 
 int main(int argc, char** argv) {
   unsigned char flags = 0;
@@ -66,6 +69,16 @@ int main(int argc, char** argv) {
   else if (optind == argc) fprintf(stderr, "Error: Missing input file\n");
   else fprintf(stderr, "Error: Too many input files\n");
   if (optind != argc - 1) exit(1);
+
+  for (char* p = input_file; *p != 0; ++p)
+    (*(p+1) == 0) ?
+      (((p - input_file) < 2) || ((*p != 46)
+				  || (*(p - 1) != 46)
+				  || (*(p - 2) != 46))) ?
+      exit(1 + (0 & fprintf(stderr, "Error: Unrecognized file extension\n"))) :
+      ((p - input_file) == 2) ?
+      exit(1 + (0 & fprintf(stderr, "Error: Empty file name\n"))) : (void)0
+      : (void)0;
 
   // Trust me it works and write the good output name
   if (!(flags & OFLAG))
