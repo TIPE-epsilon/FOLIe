@@ -1,0 +1,1 @@
+-Werror -Wpedantic -Wall -Wextra -Wstrict-prototypes
